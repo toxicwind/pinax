@@ -3,7 +3,7 @@
   "contract": "estate-pinax/kappa-catalog/v1",
   "generator": "@toxicwind/pinax codegen — kappa target (full profile) — DO NOT EDIT BY HAND",
   "provenance": "@toxicwind/pinax src/data.ts",
-  "generatedAt": "2026-10-25T05:46:49.000Z",
+  "generatedAt": "2026-10-21T05:24:12.000Z",
   "deadIds": [
     "llama-3.3-70b-versatile",
     "meta-llama/llama-3.1-8b-instruct",
@@ -107,6 +107,18 @@
       "google",
       "models/gemini-2.5-flash"
     ],
+    "groq-llama-3.3-70b": [
+      "groq",
+      "llama-3.3-70b-versatile"
+    ],
+    "groq-qwen3-32b": [
+      "groq",
+      "qwen/qwen3-32b"
+    ],
+    "groq-qwen3.6-27b": [
+      "groq",
+      "qwen/qwen3.6-27b"
+    ],
     "groq-gpt-oss-120b": [
       "groq",
       "openai/gpt-oss-120b"
@@ -115,9 +127,9 @@
       "groq",
       "openai/gpt-oss-20b"
     ],
-    "groq-qwen3.8-27b": [
+    "groq-llama-4-scout": [
       "groq",
-      "qwen/qwen3.8-27b"
+      "meta-llama/llama-4-scout-17b-16e-instruct"
     ]
   },
   "seeds": {
@@ -142,8 +154,21 @@
       "moonshot-v1-128k",
       "kimi-k2-instruct"
     ],
-    "bornite": [],
-    "hodos": [],
+    "omniroute": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
     "nvidia": [
       "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
@@ -807,34 +832,79 @@
         }
       }
     },
-    "bornite": {
+    "omniroute": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "Bornite (local VRAM engine)",
+      "name": "OmniRoute (local gateway)",
       "options": {
-        "baseURL": "http://127.0.0.1:25100/v1",
-        "apiKey": "none"
-      },
-      "models": {}
-    },
-    "hodos": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "Hodos (estate multi-provider gateway)",
-      "options": {
-        "baseURL": "http://127.0.0.1:25193/v1",
-        "apiKey": "herd-local"
-      },
-      "models": {}
-    },
-    "hodos.cuttinggate": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "Hodos (estate multi-provider gateway) / CuttingGate :25200",
-      "options": {
-        "baseURL": "http://127.0.0.1:25200/v1",
-        "apiKey": "{env:CUTTINGGATE_API_KEY}"
+        "baseURL": "http://127.0.0.1:20130/v1",
+        "apiKey": "{env:OMNIROUTE_GATEWAY_KEY}"
       },
       "models": {
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "meta/llama-3.2-11b-vision-instruct": {
+          "name": "meta/llama-3.2-11b-vision-instruct",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "meta/muse-glimmer-30b": {
+          "name": "meta/muse-glimmer-30b",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/ising-calibration-1.5-31b": {
+          "name": "nvidia/ising-calibration-1.5-31b",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/nemotron-3.5-content-safety": {
+          "name": "nvidia/nemotron-3.5-content-safety",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/nemotron-3.5-lightning-30b-a3b": {
+          "name": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -846,26 +916,16 @@
             "context": 128000,
             "output": 8192
           }
-        }
-      }
-    },
-    "hodos.secure-nim": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "Hodos (estate multi-provider gateway) / NVIDIA secure-NIM",
-      "options": {
-        "baseURL": "https://integrate.api.nvidia.com/v1",
-        "apiKey": "{env:NVIDIA_API_KEY}"
-      },
-      "models": {
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        },
+        "poolside/laguna-xs-2.1": {
+          "name": "poolside/laguna-xs-2.1",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-lightning-30b-a3b": {
-          "name": "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "z-ai/glm-5.3-flash": {
+          "name": "z-ai/glm-5.3-flash",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -1055,7 +1115,7 @@
         "openai/gpt-oss-20b": {
           "name": "openai/gpt-oss-20b",
           "limit": {
-            "context": 131072,
+            "context": 128000,
             "output": 8192
           }
         },
@@ -3245,7 +3305,7 @@
       "npm": "@ai-sdk/openai-compatible",
       "name": "Chutes",
       "options": {
-        "baseURL": "https://llm.chutes.ai/v1",
+        "baseURL": "https://inference.chutes.ai/v1",
         "apiKey": "{env:CHUTES_API_KEY}"
       },
       "models": {
@@ -5154,48 +5214,15 @@
       "auth": "bearer"
     },
     {
-      "name": "bornite",
-      "displayName": "Bornite (local VRAM engine)",
-      "baseUrl": "http://127.0.0.1:25100/v1",
-      "keyEnv": "",
-      "keyEnvs": [],
-      "adapter": "openai",
-      "auth": "none"
-    },
-    {
-      "name": "hodos",
-      "displayName": "Hodos (estate multi-provider gateway)",
-      "baseUrl": "http://127.0.0.1:25193/v1",
-      "keyEnv": "HODOS_API_KEY",
+      "name": "omniroute",
+      "displayName": "OmniRoute (local gateway)",
+      "baseUrl": "http://127.0.0.1:20130/v1",
+      "keyEnv": "OMNIROUTE_GATEWAY_KEY",
       "keyEnvs": [
-        "HODOS_API_KEY"
+        "OMNIROUTE_GATEWAY_KEY"
       ],
-      "adapter": "none",
-      "auth": "bearer",
-      "modelProviders": [
-        {
-          "name": "cuttinggate",
-          "baseUrl": "http://127.0.0.1:25200/v1",
-          "keyEnv": "CUTTINGGATE_API_KEY",
-          "adapter": "openai",
-          "auth": "bearer",
-          "seeds": [
-            "nvidia/nemotron-3.5-super-vl-120b-a12b",
-            "openai/gpt-oss-20b"
-          ]
-        },
-        {
-          "name": "secure-nim",
-          "baseUrl": "https://integrate.api.nvidia.com/v1",
-          "keyEnv": "NVIDIA_API_KEY",
-          "adapter": "openai",
-          "auth": "bearer",
-          "seeds": [
-            "nvidia/nemotron-3.5-super-vl-120b-a12b",
-            "nvidia/nemotron-3.5-lightning-30b-a3b"
-          ]
-        }
-      ]
+      "adapter": "openai",
+      "auth": "bearer"
     },
     {
       "name": "nvidia",
@@ -5453,7 +5480,7 @@
     {
       "name": "chutes",
       "displayName": "Chutes",
-      "baseUrl": "https://llm.chutes.ai/v1",
+      "baseUrl": "https://inference.chutes.ai/v1",
       "keyEnv": "CHUTES_API_KEY",
       "keyEnvs": [
         "CHUTES_API_KEY"

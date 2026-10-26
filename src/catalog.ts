@@ -30,7 +30,6 @@
 import type {
   LiveCatalogJson,
   ModelAlias,
-  ModelProviderDef,
   ModelSource,
   PersistedCatalog,
   PersistedProviderState,
@@ -175,75 +174,13 @@ export class ModelCatalog {
     return out;
   }
 
-  /**
-   * MODEL-PROVIDER LAYER — resolves the provider -> modelProvider -> model
-   * hierarchy. A provider with `modelProviders` exposes its distinct serving
-   * backends; the SAME model id in two modelProviders is a VALID dupe and is
-   * NOT deduped here — each row is tagged with its modelProvider path. A
-   * provider WITHOUT modelProviders falls back to the legacy flat row
-   * (modelProvider = "" = the provider itself), preserving old behavior.
-   */
-  allServingByModelProvider(): {
-    provider: string;
-    modelProvider: string;
-    id: string;
-    source: ModelSource;
-  }[] {
-    const out: {
-      provider: string;
-      modelProvider: string;
-      id: string;
-      source: ModelSource;
-    }[] = [];
-    for (const name of this.providerNames()) {
-      const def = this.defs.get(name);
-      const mps = def?.modelProviders ?? [];
-      if (mps.length === 0) {
-        // Legacy flat provider: one implicit modelProvider (the provider).
-        for (const id of this.servingModels(name))
-          out.push({
-            provider: name,
-            modelProvider: "",
-            id,
-            source: this.modelSource(name, id),
-          });
-        continue;
-      }
-      // Hierarchical provider: iterate its modelProviders, each its own list.
-      for (const mp of mps) {
-        const ids = this.servingByModelProvider(name, mp);
-        for (const id of ids)
-          out.push({
-            provider: name,
-            modelProvider: mp.name,
-            id,
-            source: this.modelSource(name, id),
-          });
-      }
-    }
-    return out;
-  }
-
-  /** Serving models for one modelProvider under a provider (seeds until discovered). */
-  servingByModelProvider(
-    provider: string,
-    mp: NonNullable<ProviderDef["modelProviders"]>[number],
-  ): string[] {
-    const st = this.states.get(provider);
-    const ids = (mp.seeds ?? []).filter(
-      (id) => !(st?.quarantine.has(id) ?? false) && !this.deadIds.has(id),
-    );
-    return [...new Set(ids)];
-  }
-
   modelSource(provider: string, id: string): ModelSource {
     const st = this.states.get(provider);
     if (!st) return "unknown";
     if (this.deadIds.has(id)) return "dead";
     if (st.quarantine.has(id)) return "quarantined";
     if (this.overlays.get(provider)?.has(id)) return "overlay";
-    if (!st.everDiscovered)
-      return st.def.seeds.includes(id) ? "seed" : "unknown";
+    if (!st.everDiscovered) return st.def.seeds.includes(id) ? "seed" : "unknown";
     return st.serving.includes(id) ? "live" : "unknown";
   }
 
@@ -319,7 +256,8 @@ export class ModelCatalog {
       return;
     }
     const serving = new Set(st.live);
-    for (const [id, n] of st.miss) if (n < PRUNE_AFTER_MISSES) serving.add(id);
+    for (const [id, n] of st.miss)
+      if (n < PRUNE_AFTER_MISSES) serving.add(id);
     st.serving = [...serving].filter(
       (id) => !st.quarantine.has(id) && !this.deadIds.has(id),
     );
@@ -370,10 +308,7 @@ export class ModelCatalog {
     for (const [name, st] of this.states) {
       const miss: Record<string, number> = {};
       for (const [id, n] of st.miss) miss[id] = n;
-      const quarantine: Record<
-        string,
-        { reason: QuarantineReason; since: string }
-      > = {};
+      const quarantine: Record<string, { reason: QuarantineReason; since: string }> = {};
       for (const [id, q] of st.quarantine) quarantine[id] = { ...q };
       providers[name] = {
         live: [...st.live],
@@ -391,21 +326,12 @@ export class ModelCatalog {
   loadJSON(raw: unknown): void {
     if (typeof raw !== "object" || raw === null) return;
     const obj = raw as Record<string, unknown>;
-    if (
-      obj["version"] === 2 &&
-      typeof obj["providers"] === "object" &&
-      obj["providers"] !== null
-    ) {
-      const providers = obj["providers"] as Record<
-        string,
-        PersistedProviderState
-      >;
+    if (obj["version"] === 2 && typeof obj["providers"] === "object" && obj["providers"] !== null) {
+      const providers = obj["providers"] as Record<string, PersistedProviderState>;
       for (const [name, p] of Object.entries(providers)) {
         const st = this.states.get(name);
         if (!st || typeof p !== "object" || p === null) continue;
-        st.live = Array.isArray(p.live)
-          ? p.live.filter((x) => typeof x === "string")
-          : [];
+        st.live = Array.isArray(p.live) ? p.live.filter((x) => typeof x === "string") : [];
         st.everDiscovered = p.everDiscovered === true;
         st.miss = new Map(
           Object.entries(p.miss ?? {}).filter(
@@ -415,10 +341,7 @@ export class ModelCatalog {
         st.quarantine = new Map();
         for (const [id, q] of Object.entries(p.quarantine ?? {})) {
           if (q && typeof q.reason === "string" && typeof q.since === "string")
-            st.quarantine.set(id, {
-              reason: q.reason as QuarantineReason,
-              since: q.since,
-            });
+            st.quarantine.set(id, { reason: q.reason as QuarantineReason, since: q.since });
         }
         if (typeof p.lastOk === "string") st.lastOk = p.lastOk;
         if (typeof p.lastError === "string") st.lastError = p.lastError;
@@ -492,11 +415,7 @@ export class ModelCatalog {
 
   private async saveToFileInner(path: string): Promise<void> {
     const data = JSON.stringify(this.toJSON(), null, 2) + "\n";
-    await ModelCatalog.atomicWriteFile(
-      path,
-      data,
-      () => `pstate-${this.nextTmpId()}`,
-    );
+    await ModelCatalog.atomicWriteFile(path, data, () => `pstate-${this.nextTmpId()}`);
     // The live catalog export is the contract for non-TS consumers (Go herd
     // reads this file for the serving sets). Written on every state save so
     // it can never go stale relative to the state file.
@@ -512,11 +431,7 @@ export class ModelCatalog {
 
   private async writeLiveCatalogInner(path: string): Promise<void> {
     const data = JSON.stringify(this.liveCatalogJson(), null, 2) + "\n";
-    await ModelCatalog.atomicWriteFile(
-      path,
-      data,
-      () => `live-${this.nextTmpId()}`,
-    );
+    await ModelCatalog.atomicWriteFile(path, data, () => `live-${this.nextTmpId()}`);
   }
 
   private nextTmpId(): string {

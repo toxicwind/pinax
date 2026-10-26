@@ -114,63 +114,48 @@ export const PROVIDER_DEFS: ProviderDef[] = [
     ],
   },
   {
-    name: "bornite",
-    displayName: "Bornite (local VRAM engine)",
-    // :25100 is the estate's LOCAL inference engine (was `herd`): it serves
-    // the on-box GGUF fleet over an OpenAI-compatible surface and is the
-    // sovereign leg of the routing chain (chalcopyrite :25200 ->
-    // rhodochrosite :25193 -> bornite :25100). It was ABSENT from this
-    // catalog until 2026-10-25, so the estate's own live local models were
-    // invisible to every consumer that reads the catalog.
-    // `auth: none` — the local engine is bound to loopback and does not gate.
-    baseUrl: "http://127.0.0.1:25100/v1",
-    keyEnv: "",
-    auth: "none",
-    adapter: "openai",
-    seeds: [],
-  },
-  {
-    name: "hodos",
-    displayName: "Hodos (estate multi-provider gateway)",
-    // hodos :25193 is the estate's multi-provider inference gateway
-    // (pens/olympus/products/hodos, "flock" circuit). It is the FIRST-CLASS
-    // example of the provider -> modelProvider -> model hierarchy: one OVERALL
-    // provider owning several distinct SERVING BACKENDS (modelProviders) that
-    // may serve overlapping model sets (dupes are valid, keyed by path).
-    // Chain: cuttinggate :25200 -> flock :25193 -> vans.
-    baseUrl: "http://127.0.0.1:25193/v1",
-    keyEnv: "HODOS_API_KEY",
+    name: "omniroute",
+    displayName: "OmniRoute (local gateway)",
+    // 2026-10-09: :20130 is OmniRoute (config/ports.env OMNIROUTE_PORT) --
+    // the multi-provider aggregator with its own dashboard at
+    // https://estate.tailc9ac71.ts.net:8443. Distinct from VansRouter (:20128);
+    // both are registered so neither shadows the other. Gateway auth uses a
+    // key minted in the dashboard (API Keys -> estate-gateway), not the
+    // per-provider upstream keys that live inside its DB.
+    baseUrl: "http://127.0.0.1:20130/v1",
+    keyEnv: "OMNIROUTE_GATEWAY_KEY",
     auth: "bearer",
-    adapter: "none", // gateway itself has no single /models; modelProviders own the surfaces
-    seeds: [],
-    modelProviders: [
-      {
-        name: "cuttinggate",
-        displayName: "CuttingGate :25200",
-        baseUrl: "http://127.0.0.1:25200/v1",
-        keyEnv: "CUTTINGGATE_API_KEY",
-        auth: "bearer",
-        adapter: "openai",
-        seeds: [
-          // Same super model served by flock too — a VALID dupe across two
-          // modelProviders, disambiguated by path hodos.flock vs hodos.cuttinggate.
-          "nvidia/nemotron-3.5-super-vl-120b-a12b",
-          "openai/gpt-oss-20b",
-        ],
-      },
-      {
-        name: "secure-nim",
-        displayName: "NVIDIA secure-NIM",
-        baseUrl: "https://integrate.api.nvidia.com/v1",
-        keyEnv: "NVIDIA_API_KEY",
-        auth: "bearer",
-        adapter: "openai",
-        seeds: [
-          "nvidia/nemotron-3.5-super-vl-120b-a12b",
-          "nvidia/nemotron-3.5-lightning-30b-a3b",
-        ],
-      },
+    adapter: "openai",
+    seeds: [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash",
     ],
+    contextLengths: {
+      "cohere/north-mini-code:free": 128000,
+      "google/gemma-4-26b-a4b-it:free": 1000000,
+      "google/gemma-4-31b-it:free": 1000000,
+      "inclusionai/ling-3.0-flash-fin:free": 256000,
+      "inclusionai/ling-3.0-flash:free": 256000,
+      "nvidia/nemotron-3-nano-30b-a3b:free": 256000,
+      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free": 256000,
+      "nvidia/nemotron-3-super-120b-a12b:free": 500000,
+      "nvidia/nemotron-3-ultra-550b-a55b:free": 1000000,
+      "nvidia/nemotron-nano-12b-v2-vl:free": 256000,
+      "nvidia/nemotron-nano-9b-v2:free": 256000,
+      "poolside/laguna-s-2.1:free": 256000,
+      "poolside/laguna-xs-2.1:free": 256000
+    },
   },
   {
     name: "nvidia",
@@ -210,7 +195,7 @@ export const PROVIDER_DEFS: ProviderDef[] = [
       "nvidia/nemotron-3-ultra-550b-a55b": 1000000,
       "openai/gpt-oss-20b": 128000,
       "z-ai/glm-5.3": 200000,
-      "z-ai/glm-5.3-flash": 200000,
+      "z-ai/glm-5.3-flash": 200000
     },
   },
   {
@@ -235,9 +220,12 @@ export const PROVIDER_DEFS: ProviderDef[] = [
       "z-ai/glm-5.3-flash",
     ],
     contextLengths: {
-      "openai/gpt-oss-120b": 131072,
-      "openai/gpt-oss-20b": 131072,
-      "qwen/qwen3.8-27b": 131072,
+      "llama-3.3-70b-versatile": 128000,
+      "meta-llama/llama-4-scout-17b-16e-instruct": 1000000,
+      "openai/gpt-oss-120b": 128000,
+      "openai/gpt-oss-20b": 128000,
+      "qwen/qwen3-32b": 128000,
+      "qwen/qwen3.6-27b": 128000
     },
   },
   {
@@ -290,7 +278,7 @@ export const PROVIDER_DEFS: ProviderDef[] = [
     contextLengths: {
       "mistral-large-latest": 256000,
       "mistral-medium-latest": 128000,
-      "mistral-small-latest": 128000,
+      "mistral-small-latest": 128000
     },
   },
   {
@@ -319,7 +307,7 @@ export const PROVIDER_DEFS: ProviderDef[] = [
       "claude-opus-5-5": 1000000,
       "claude-sonnet-5": 1000000,
       "claude-opus-4-5-20251101": 200000,
-      "claude-sonnet-4-5-20250929": 200000,
+      "claude-sonnet-4-5-20250929": 200000
     },
   },
   {
@@ -346,7 +334,7 @@ export const PROVIDER_DEFS: ProviderDef[] = [
     contextLengths: {
       "deepseek-v4-flash": 256000,
       "deepseek-v4-pro": 256000,
-      "deepseek-v3.2-chat": 256000,
+      "deepseek-v3.2-chat": 256000
     },
   },
   {
@@ -370,7 +358,7 @@ export const PROVIDER_DEFS: ProviderDef[] = [
       "glm-5.3-flash": 1000000,
       "minimax-m3": 1000000,
       "qwen3.6-35b": 262000,
-      diffusiongemma: 262000,
+      "diffusiongemma": 262000,
       "deepseek-v4-flash": 1000000,
     },
   },
@@ -400,7 +388,7 @@ export const PROVIDER_DEFS: ProviderDef[] = [
     ],
     contextLengths: {
       "grok-4.5": 2000000,
-      "grok-4.6": 2000000,
+      "grok-4.6": 2000000
     },
   },
   {
@@ -426,7 +414,7 @@ export const PROVIDER_DEFS: ProviderDef[] = [
     ],
     contextLengths: {
       "accounts/fireworks/models/glm-5.2-fast": 200000,
-      "kimi-k2.7-code": 256000,
+      "kimi-k2.7-code": 256000
     },
   },
   {
@@ -453,7 +441,7 @@ export const PROVIDER_DEFS: ProviderDef[] = [
     contextLengths: {
       "kimi-k2.6": 256000,
       "kimi-k2.7-code": 256000,
-      "kimi-k2-thinking": 256000,
+      "kimi-k2-thinking": 256000
     },
   },
   {
@@ -779,7 +767,7 @@ export const PROVIDER_DEFS: ProviderDef[] = [
   {
     name: "chutes",
     displayName: "Chutes",
-    baseUrl: "https://llm.chutes.ai/v1",
+    baseUrl: "https://inference.chutes.ai/v1",
     keyEnv: "CHUTES_API_KEY",
     auth: "bearer",
     adapter: "openai",
@@ -946,7 +934,7 @@ export const PROVIDER_DEFS: ProviderDef[] = [
       "z-ai/glm-5.3-flash",
     ],
     contextLengths: {
-      "hyperbolic/llama-3.1-70b": 128000,
+      "hyperbolic/llama-3.1-70b": 128000
     },
   },
   {
@@ -1034,7 +1022,7 @@ export const PROVIDER_DEFS: ProviderDef[] = [
       "z-ai/glm-5.3-flash",
     ],
     contextLengths: {
-      "perplexity/sonar": 200000,
+      "perplexity/sonar": 200000
     },
   },
   {
@@ -1301,9 +1289,12 @@ export const MODEL_ALIASES: Record<string, ModelAlias> = {
   "gemini-3.1-pro": ["google", "models/gemini-3.1-pro-preview"],
   "gemini-3-flash": ["google", "models/gemini-3-flash-preview"],
   "gemini-2.5-flash": ["google", "models/gemini-2.5-flash"],
+  "groq-llama-3.3-70b": ["groq", "llama-3.3-70b-versatile"],
+  "groq-qwen3-32b": ["groq", "qwen/qwen3-32b"],
+  "groq-qwen3.6-27b": ["groq", "qwen/qwen3.6-27b"],
   "groq-gpt-oss-120b": ["groq", "openai/gpt-oss-120b"],
   "groq-gpt-oss-20b": ["groq", "openai/gpt-oss-20b"],
-  "groq-qwen3.8-27b": ["groq", "qwen/qwen3.8-27b"],
+  "groq-llama-4-scout": ["groq", "meta-llama/llama-4-scout-17b-16e-instruct"],
 };
 
 /**

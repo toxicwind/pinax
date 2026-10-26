@@ -86,31 +86,6 @@ function keyEnvsOf(d: { keyEnv?: string; keyEnvAlt?: string }): string[] {
   return out;
 }
 
-/** Serialize one ModelProviderDef into the JSON artifact (never duplicates by sibling). */
-function modelProviderJson(mp: {
-  name: string;
-  baseUrl: string;
-  keyEnv?: string;
-  adapter?: string;
-  auth?: string;
-  headerName?: string;
-  queryParam?: string;
-  seeds?: string[];
-  contextLengths?: Record<string, number>;
-}) {
-  return {
-    name: mp.name,
-    baseUrl: mp.baseUrl,
-    ...(mp.keyEnv ? { keyEnv: mp.keyEnv } : {}),
-    ...(mp.adapter ? { adapter: mp.adapter } : {}),
-    ...(mp.auth ? { auth: mp.auth } : {}),
-    ...(mp.headerName ? { headerName: mp.headerName } : {}),
-    ...(mp.queryParam ? { queryParam: mp.queryParam } : {}),
-    ...(mp.seeds ? { seeds: mp.seeds } : {}),
-    ...(mp.contextLengths ? { contextLengths: mp.contextLengths } : {}),
-  };
-}
-
 /** Canonical JSON artifact for non-TS consumers (Python research scripts). */
 export function buildProvidersJson(input: CodegenInput): string {
   const doc = {
@@ -136,11 +111,6 @@ export function buildProvidersJson(input: CodegenInput): string {
       ...(d.noModelsReason ? { noModelsReason: d.noModelsReason } : {}),
       ...(d.enabled === false ? { enabled: false } : {}),
       ...(d.routerLocal ? { routerLocal: true } : {}),
-      ...(d.modelProviders
-        ? {
-            modelProviders: d.modelProviders.map((mp) => modelProviderJson(mp)),
-          }
-        : {}),
     })),
     // Seeds are cold-start data only; the JSON documents that contract.
     seeds: Object.fromEntries(input.defs.map((d) => [d.name, d.seeds])),
@@ -207,43 +177,6 @@ export function buildProvidersKappaJson(input: CodegenInput): string {
       },
       models,
     };
-
-    // MODEL-PROVIDER LAYER: a provider with modelProviders exposes each
-    // distinct serving backend as its own kappa provider keyed
-    // `provider.modelProvider` (e.g. "hodos.flock", "hodos.secure-nim").
-    // The same model id in two modelProviders is a VALID dupe — both entries
-    // are emitted, each with its own baseURL/keyEnv. Never deduped.
-    if (d.modelProviders && d.modelProviders.length > 0) {
-      for (const mp of d.modelProviders) {
-        const mpModels: Record<
-          string,
-          { name: string; limit: { context: number; output: number } }
-        > = {};
-        const mpIds = mp.seeds ?? [];
-        for (const id of mpIds) {
-          mpModels[id] = {
-            name: id,
-            limit: {
-              context:
-                mp.contextLengths?.[id] ?? d.contextLengths?.[id] ?? 128000,
-              output: 8192,
-            },
-          };
-        }
-        let mpKey = "none";
-        if (mp.keyEnv) mpKey = `{env:${mp.keyEnv}}`;
-        const mpKeyName = `${d.name}.${mp.name}`;
-        providerMap[mpKeyName] = {
-          npm: "@ai-sdk/openai-compatible",
-          name: `${d.displayName ?? d.name} / ${mp.displayName ?? mp.name}`,
-          options: {
-            baseURL: mp.baseUrl,
-            apiKey: mpKey,
-          },
-          models: mpModels,
-        };
-      }
-    }
   }
 
   const doc = {
@@ -274,11 +207,6 @@ export function buildProvidersKappaJson(input: CodegenInput): string {
       ...(d.noModelsReason ? { noModelsReason: d.noModelsReason } : {}),
       ...(d.enabled === false ? { enabled: false } : {}),
       ...(d.routerLocal ? { routerLocal: true } : {}),
-      ...(d.modelProviders
-        ? {
-            modelProviders: d.modelProviders.map((mp) => modelProviderJson(mp)),
-          }
-        : {}),
     })),
   };
 
@@ -622,6 +550,7 @@ export function buildProvidersTauYaml(input: CodegenInput): string {
     if (
       d.enabled === false ||
       d.routerLocal ||
+      d.name === "herd" ||
       d.name === "herd"
     ) {
       continue;

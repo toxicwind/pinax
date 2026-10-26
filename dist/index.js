@@ -298,39 +298,6 @@ class ModelCatalog {
     }
     return out;
   }
-  allServingByModelProvider() {
-    const out = [];
-    for (const name of this.providerNames()) {
-      const def = this.defs.get(name);
-      const mps = def?.modelProviders ?? [];
-      if (mps.length === 0) {
-        for (const id of this.servingModels(name))
-          out.push({
-            provider: name,
-            modelProvider: "",
-            id,
-            source: this.modelSource(name, id)
-          });
-        continue;
-      }
-      for (const mp of mps) {
-        const ids = this.servingByModelProvider(name, mp);
-        for (const id of ids)
-          out.push({
-            provider: name,
-            modelProvider: mp.name,
-            id,
-            source: this.modelSource(name, id)
-          });
-      }
-    }
-    return out;
-  }
-  servingByModelProvider(provider, mp) {
-    const st = this.states.get(provider);
-    const ids = (mp.seeds ?? []).filter((id) => !(st?.quarantine.has(id) ?? false) && !this.deadIds.has(id));
-    return [...new Set(ids)];
-  }
   modelSource(provider, id) {
     const st = this.states.get(provider);
     if (!st)
@@ -473,10 +440,7 @@ class ModelCatalog {
         st.quarantine = new Map;
         for (const [id, q] of Object.entries(p.quarantine ?? {})) {
           if (q && typeof q.reason === "string" && typeof q.since === "string")
-            st.quarantine.set(id, {
-              reason: q.reason,
-              since: q.since
-            });
+            st.quarantine.set(id, { reason: q.reason, since: q.since });
         }
         if (typeof p.lastOk === "string")
           st.lastOk = p.lastOk;
@@ -631,48 +595,42 @@ var PROVIDER_DEFS = [
     ]
   },
   {
-    name: "bornite",
-    displayName: "Bornite (local VRAM engine)",
-    baseUrl: "http://127.0.0.1:25100/v1",
-    keyEnv: "",
-    auth: "none",
-    adapter: "openai",
-    seeds: []
-  },
-  {
-    name: "hodos",
-    displayName: "Hodos (estate multi-provider gateway)",
-    baseUrl: "http://127.0.0.1:25193/v1",
-    keyEnv: "HODOS_API_KEY",
+    name: "omniroute",
+    displayName: "OmniRoute (local gateway)",
+    baseUrl: "http://127.0.0.1:20130/v1",
+    keyEnv: "OMNIROUTE_GATEWAY_KEY",
     auth: "bearer",
-    adapter: "none",
-    seeds: [],
-    modelProviders: [
-      {
-        name: "cuttinggate",
-        displayName: "CuttingGate :25200",
-        baseUrl: "http://127.0.0.1:25200/v1",
-        keyEnv: "CUTTINGGATE_API_KEY",
-        auth: "bearer",
-        adapter: "openai",
-        seeds: [
-          "nvidia/nemotron-3.5-super-vl-120b-a12b",
-          "openai/gpt-oss-20b"
-        ]
-      },
-      {
-        name: "secure-nim",
-        displayName: "NVIDIA secure-NIM",
-        baseUrl: "https://integrate.api.nvidia.com/v1",
-        keyEnv: "NVIDIA_API_KEY",
-        auth: "bearer",
-        adapter: "openai",
-        seeds: [
-          "nvidia/nemotron-3.5-super-vl-120b-a12b",
-          "nvidia/nemotron-3.5-lightning-30b-a3b"
-        ]
-      }
-    ]
+    adapter: "openai",
+    seeds: [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    contextLengths: {
+      "cohere/north-mini-code:free": 128000,
+      "google/gemma-4-26b-a4b-it:free": 1e6,
+      "google/gemma-4-31b-it:free": 1e6,
+      "inclusionai/ling-3.0-flash-fin:free": 256000,
+      "inclusionai/ling-3.0-flash:free": 256000,
+      "nvidia/nemotron-3-nano-30b-a3b:free": 256000,
+      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free": 256000,
+      "nvidia/nemotron-3-super-120b-a12b:free": 500000,
+      "nvidia/nemotron-3-ultra-550b-a55b:free": 1e6,
+      "nvidia/nemotron-nano-12b-v2-vl:free": 256000,
+      "nvidia/nemotron-nano-9b-v2:free": 256000,
+      "poolside/laguna-s-2.1:free": 256000,
+      "poolside/laguna-xs-2.1:free": 256000
+    }
   },
   {
     name: "nvidia",
@@ -728,9 +686,12 @@ var PROVIDER_DEFS = [
       "z-ai/glm-5.3-flash"
     ],
     contextLengths: {
-      "openai/gpt-oss-120b": 131072,
-      "openai/gpt-oss-20b": 131072,
-      "qwen/qwen3.8-27b": 131072
+      "llama-3.3-70b-versatile": 128000,
+      "meta-llama/llama-4-scout-17b-16e-instruct": 1e6,
+      "openai/gpt-oss-120b": 128000,
+      "openai/gpt-oss-20b": 128000,
+      "qwen/qwen3-32b": 128000,
+      "qwen/qwen3.6-27b": 128000
     }
   },
   {
@@ -1257,7 +1218,7 @@ var PROVIDER_DEFS = [
   {
     name: "chutes",
     displayName: "Chutes",
-    baseUrl: "https://llm.chutes.ai/v1",
+    baseUrl: "https://inference.chutes.ai/v1",
     keyEnv: "CHUTES_API_KEY",
     auth: "bearer",
     adapter: "openai",
@@ -1736,9 +1697,12 @@ var MODEL_ALIASES = {
   "gemini-3.1-pro": ["google", "models/gemini-3.1-pro-preview"],
   "gemini-3-flash": ["google", "models/gemini-3-flash-preview"],
   "gemini-2.5-flash": ["google", "models/gemini-2.5-flash"],
+  "groq-llama-3.3-70b": ["groq", "llama-3.3-70b-versatile"],
+  "groq-qwen3-32b": ["groq", "qwen/qwen3-32b"],
+  "groq-qwen3.6-27b": ["groq", "qwen/qwen3.6-27b"],
   "groq-gpt-oss-120b": ["groq", "openai/gpt-oss-120b"],
   "groq-gpt-oss-20b": ["groq", "openai/gpt-oss-20b"],
-  "groq-qwen3.8-27b": ["groq", "qwen/qwen3.8-27b"]
+  "groq-llama-4-scout": ["groq", "meta-llama/llama-4-scout-17b-16e-instruct"]
 };
 var DEAD_MODEL_IDS = [
   "moonshotai/kimi-k2-instruct",
@@ -1865,19 +1829,6 @@ function keyEnvsOf(d) {
   }
   return out;
 }
-function modelProviderJson(mp) {
-  return {
-    name: mp.name,
-    baseUrl: mp.baseUrl,
-    ...mp.keyEnv ? { keyEnv: mp.keyEnv } : {},
-    ...mp.adapter ? { adapter: mp.adapter } : {},
-    ...mp.auth ? { auth: mp.auth } : {},
-    ...mp.headerName ? { headerName: mp.headerName } : {},
-    ...mp.queryParam ? { queryParam: mp.queryParam } : {},
-    ...mp.seeds ? { seeds: mp.seeds } : {},
-    ...mp.contextLengths ? { contextLengths: mp.contextLengths } : {}
-  };
-}
 function buildProvidersJson(input) {
   const doc = {
     $schema: "estate-pinax/v1",
@@ -1901,10 +1852,7 @@ function buildProvidersJson(input) {
       ...d.staticModels ? { staticModels: d.staticModels } : {},
       ...d.noModelsReason ? { noModelsReason: d.noModelsReason } : {},
       ...d.enabled === false ? { enabled: false } : {},
-      ...d.routerLocal ? { routerLocal: true } : {},
-      ...d.modelProviders ? {
-        modelProviders: d.modelProviders.map((mp) => modelProviderJson(mp))
-      } : {}
+      ...d.routerLocal ? { routerLocal: true } : {}
     })),
     seeds: Object.fromEntries(input.defs.map((d) => [d.name, d.seeds])),
     seedsContract: "Cold-start only: served while a provider has never had a successful discovery; inert afterwards. Never hand-edit model membership here \u2014 discovery owns it.",
@@ -1951,34 +1899,6 @@ function buildProvidersKappaJson(input) {
       },
       models
     };
-    if (d.modelProviders && d.modelProviders.length > 0) {
-      for (const mp of d.modelProviders) {
-        const mpModels = {};
-        const mpIds = mp.seeds ?? [];
-        for (const id of mpIds) {
-          mpModels[id] = {
-            name: id,
-            limit: {
-              context: mp.contextLengths?.[id] ?? d.contextLengths?.[id] ?? 128000,
-              output: 8192
-            }
-          };
-        }
-        let mpKey = "none";
-        if (mp.keyEnv)
-          mpKey = `{env:${mp.keyEnv}}`;
-        const mpKeyName = `${d.name}.${mp.name}`;
-        providerMap[mpKeyName] = {
-          npm: "@ai-sdk/openai-compatible",
-          name: `${d.displayName ?? d.name} / ${mp.displayName ?? mp.name}`,
-          options: {
-            baseURL: mp.baseUrl,
-            apiKey: mpKey
-          },
-          models: mpModels
-        };
-      }
-    }
   }
   const doc = {
     $schema: "https://app.kappa.ai/config.json",
@@ -2006,10 +1926,7 @@ function buildProvidersKappaJson(input) {
       ...d.staticModels ? { staticModels: d.staticModels } : {},
       ...d.noModelsReason ? { noModelsReason: d.noModelsReason } : {},
       ...d.enabled === false ? { enabled: false } : {},
-      ...d.routerLocal ? { routerLocal: true } : {},
-      ...d.modelProviders ? {
-        modelProviders: d.modelProviders.map((mp) => modelProviderJson(mp))
-      } : {}
+      ...d.routerLocal ? { routerLocal: true } : {}
     }))
   };
   return JSON.stringify(doc, null, 2) + `
@@ -2273,7 +2190,7 @@ function buildProvidersTauYaml(input) {
     "      type: openai-models-list"
   ];
   for (const d of input.defs) {
-    if (d.enabled === false || d.routerLocal || d.name === "herd") {
+    if (d.enabled === false || d.routerLocal || d.name === "herd" || d.name === "herd") {
       continue;
     }
     lines.push(`  ${d.name}:`);

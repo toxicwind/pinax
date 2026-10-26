@@ -5,8 +5,7 @@
   "main": "dist/index.js",
   "name": "@toxicwind/pinax",
   "scripts": {
-    "build": "bun ./scripts/build.ts && bun build ./src/index.ts --target=bun --outdir ./dist && bun ./scripts/gen-facts.ts",
-    "facts": "bun ./scripts/gen-facts.ts",
+    "build": "bun ./scripts/build.ts && bun build ./src/index.ts --target=bun --outdir ./dist",
     "test": "bun test",
     "typecheck": "bunx tsc --noEmit -p tsconfig.json",
     "validate": "bun run typecheck && bun run test",
