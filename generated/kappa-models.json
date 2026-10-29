@@ -3,7 +3,7 @@
   "contract": "estate-mimetite/kappa-catalog/v1",
   "generator": "@toxicwind/mimetite codegen — kappa target (full profile) — DO NOT EDIT BY HAND",
   "provenance": "@toxicwind/mimetite src/data.ts",
-  "generatedAt": "2026-10-28T13:12:58.000Z",
+  "generatedAt": "2026-10-29T00:30:31.000Z",
   "deadIds": [
     "llama-3.3-70b-versatile",
     "meta-llama/llama-3.1-8b-instruct",
@@ -224,7 +224,6 @@
     ],
     "freeinference": [
       "glm-5.3-flash",
-      "minimax-m3.1-flash",
       "qwen3.6-35b",
       "deepseek-v4-flash"
     ],
@@ -1500,13 +1499,6 @@
           "name": "glm-5.3-flash",
           "limit": {
             "context": 1000000,
-            "output": 8192
-          }
-        },
-        "minimax-m3.1-flash": {
-          "name": "minimax-m3.1-flash",
-          "limit": {
-            "context": 1048576,
             "output": 8192
           }
         },
@@ -5398,7 +5390,6 @@
       },
       "staticModels": [
         "glm-5.3-flash",
-        "minimax-m3.1-flash",
         "qwen3.6-35b",
         "deepseek-v4-flash"
       ]

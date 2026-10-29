@@ -241,7 +241,10 @@ const installed = buildInstalledTauYaml(
 // (checked in) are the CI contract; these two writes are the live-box sync.
 for (const p of [
   "/home/toxic/.tau/models.yml",
-  "/home/toxic/estate/config/tau/models.yml",
+  // 2026-10-28 single-truth lease: /home/toxic/estate must NEVER exist —
+  // the pens SSOT is the only estate home; writing here silently recreated
+  // the ghost path the lease forbids.
+  "/home/toxic/pens/estate/config/tau/models.yml",
 ]) {
   try {
     await Bun.write(p, installed);
@@ -264,7 +267,8 @@ const kappaInstalled = buildInstalledKappaJson(
 );
 for (const p of [
   "/home/toxic/.config/kappa/kappa-models.json",
-  "/home/toxic/estate/config/kappa/kappa-models.json",
+  // 2026-10-28 single-truth lease: pens SSOT, never /home/toxic/estate.
+  "/home/toxic/pens/estate/config/kappa/kappa-models.json",
 ]) {
   try {
     await Bun.write(p, kappaInstalled);

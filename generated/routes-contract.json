@@ -1,6 +1,6 @@
 {
   "schema": "routes-contract/1",
-  "generatedAt": "2026-10-29T00:27:06.218Z",
+  "generatedAt": "2026-10-29T00:42:26.919Z",
   "provenance": "@toxicwind/mimetite src/data.ts",
   "directives": {
     "lanes": [
