@@ -18,28 +18,44 @@ const here = dirname(fileURLToPath(import.meta.url));
 const outDir = join(here, "..", "generated");
 
 /**
- * flock's checked-in copy of the Rust data module. It was previously a
- * hand-copied snapshot that silently drifted — it was 6 days stale and
- * predated the vansrouter/omniroute definitions entirely. The build now
- * writes it, so "DO NOT EDIT BY HAND" is enforced by the generator
- * instead of by convention. Both trees live on the same estate
- * filesystem (hodos is its own repo), so a relative path reaches it.
+ * rhodochrosite's checked-in copy of the Rust data module. It was
+ * previously a hand-copied snapshot that silently drifted — it was 6 days
+ * stale and predated the vansrouter/omniroute definitions entirely. The
+ * build now writes it, so "DO NOT EDIT BY HAND" is enforced by the
+ * generator instead of by convention. Both trees live on the same estate
+ * filesystem (rhodochrosite is its own repo), so a relative path reaches it.
+ *
+ * Named after the retired "flock-proxy" line (flock → rhodochrosite rename,
+ * 2026-10-26). `roost_providers.rs` is a legacy alias module rhodochrosite's
+ * providers.rs still imports for wire-field authority; `mimetite_providers.rs`
+ * is the canonical module the hard rename lands on. The forge/router/
+ * flock-proxy copy is the retired container's tree (preserved, not live) —
+ * kept in sync so a dead file can't drift under a still-tracked build.
  */
-const FLOCK_RUST_PATHS = [
-  resolve(here, "..", "..", "hodos", "proxy", "src", "roost_providers.rs"),
-  resolve(here, "..", "..", "hodos", "proxy", "src", "pinax_providers.rs"),
-  // forge/router/flock-proxy is a second Rust flock-proxy copy (tracked in the
-  // forge repo). Its own copy-in-sync gate is fixed in the same rename; keep it
-  // emitted by this build so it can't silently drift again.
+const PROVIDERS_RUST_SYNC_PATHS = [
   resolve(
     here,
     "..",
     "..",
-    "forge",
-    "router",
-    "flock-proxy",
+    "rhodochrosite",
+    "proxy",
     "src",
     "roost_providers.rs",
+  ),
+  resolve(
+    here,
+    "..",
+    "..",
+    "rhodochrosite",
+    "proxy",
+    "src",
+    "mimetite_providers.rs",
+  ),
+  // forge/router/flock-proxy is a second Rust flock-proxy copy (tracked in the
+  // forge repo). Its own copy-in-sync gate is fixed in the same rename; keep it
+  // emitted by this build so it can't silently drift again.
+  resolve(
+    "/home/toxic/pens/ranch/forge/router/flock-proxy/src/roost_providers.rs",
   ),
 ];
 
@@ -65,7 +81,7 @@ const { jsonPath, goPath, rustPath, tauPath, kappaPath } = await emitAll(
     defs: PROVIDER_DEFS,
     aliases: MODEL_ALIASES,
     deadIds: DEAD_MODEL_IDS,
-    provenance: "@toxicwind/pinax src/data.ts",
+    provenance: "@toxicwind/mimetite src/data.ts",
   },
 );
 
@@ -78,7 +94,7 @@ console.log(`wrote ${kappaPath}`);
 // flock's Rust consumer keeps its data module in its own src/ tree, so the
 // emitter writes both copies from one render. Copying by hand is what let
 // the two drift.
-for (const p of FLOCK_RUST_PATHS) {
+for (const p of PROVIDERS_RUST_SYNC_PATHS) {
   try {
     await Bun.write(p, await Bun.file(rustPath).text());
     console.log(`wrote ${p}`);
@@ -111,16 +127,111 @@ async function loadEnvFile(path: string): Promise<Record<string, string>> {
   return env;
 }
 
+/**
+ * The secretsmith keyring is the SSOT (2026-10-18+). `~/.secrets` is a dead
+ * fallback record, so a build that only reads it sees an EMPTY environment
+ * and silently drops every keyring-backed provider from the generated
+ * installed slice — that is how freeinference and nvidia vanished from tau's
+ * models.yml (2026-10-26). Consult the keyring directly, and strip ONE
+ * matching pair of shell quotes (secretsmith env emits KEY='value').
+ */
+async function loadKeyringEnv(): Promise<Record<string, string>> {
+  const env: Record<string, string> = {};
+  try {
+    const proc = Bun.spawnSync(["secretsmith", "env"], {
+      stdout: "pipe",
+      stderr: "ignore",
+      timeout: 30_000,
+    });
+    if (proc.exitCode !== 0) return env;
+    for (const line of new TextDecoder().decode(proc.stdout).split("\n")) {
+      const s = line.trim();
+      if (!s || s.startsWith("#")) continue;
+      const eq = s.indexOf("=");
+      if (eq <= 0) continue;
+      const k = s
+        .slice(0, eq)
+        .trim()
+        .replace(/^export\s+/, "");
+      let v = s.slice(eq + 1).trim();
+      if (
+        (v.startsWith('"') && v.endsWith('"')) ||
+        (v.startsWith("'") && v.endsWith("'"))
+      ) {
+        v = v.slice(1, -1);
+      }
+      if (k) env[k] = v;
+    }
+  } catch {
+    // keyring unavailable (CI) — the file/env fallbacks still apply
+  }
+  return env;
+}
+
+/**
+ * Materialize tau's per-provider key files from the keyring. tau reads
+ * `apiKey: "!cat /home/toxic/.tau/<provider>.key"` so no secret is ever
+ * committed and tau's process needs no keyring env.
+ */
+async function materializeKeyFiles(
+  env: Record<string, string>,
+  pairs: Array<{ file: string; keyEnv: string }>,
+): Promise<void> {
+  for (const { file, keyEnv } of pairs) {
+    const value = env[keyEnv];
+    if (!value) continue;
+    try {
+      // NO trailing newline: tau reads this file with `!cat` straight into an
+      // Authorization header, and a trailing \n corrupts the credential
+      // ("Invalid JWT serialization: Missing dot delimiter(s)").
+      await Bun.write(file, value.trim());
+      // Bun.write's `mode` only applies at creation and is ignored for
+      // existing files — chmod explicitly so key files are 0600 (they were
+      // landing 0644 = world-readable secrets).
+      await Bun.$`chmod 600 ${file}`.quiet();
+    } catch (e) {
+      console.warn(`skip key file ${file}: ${(e as Error).message}`);
+    }
+  }
+}
+
 const installedEnv = {
   ...(await loadEnvFile("/home/toxic/.tau/.env")),
   ...(await loadEnvFile("/home/toxic/.secrets")),
+  ...(await loadKeyringEnv()),
 };
+
+// Materialize tau's per-provider key files from the keyring (idempotent,
+// 0600). tau's process is not keyring-injected, and the committed
+// models.yml must not carry inline secrets.
+const keyFilePairs: Array<{ file: string; keyEnv: string }> = [];
+for (const def of PROVIDER_DEFS as Array<{
+  name: string;
+  keyEnv?: string;
+  keyEnvAlt?: string;
+  modelProviders?: Array<{ name: string; keyEnv?: string }>;
+}>) {
+  const slug = (id: string) => id.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+  if (def.keyEnv)
+    keyFilePairs.push({
+      file: `/home/toxic/.tau/${slug(def.name)}.key`,
+      keyEnv: def.keyEnv,
+    });
+  for (const mp of def.modelProviders ?? []) {
+    if (mp.keyEnv)
+      keyFilePairs.push({
+        file: `/home/toxic/.tau/${slug(`${def.name}.${mp.name}`)}.key`,
+        keyEnv: mp.keyEnv,
+      });
+  }
+}
+await materializeKeyFiles(installedEnv, keyFilePairs);
 const installed = buildInstalledTauYaml(
   {
     defs: PROVIDER_DEFS,
     aliases: MODEL_ALIASES,
     deadIds: DEAD_MODEL_IDS,
-    provenance: "@toxicwind/pinax src/data.ts",
+    provenance: "@toxicwind/mimetite src/data.ts",
   },
   installedEnv,
 );
@@ -130,6 +241,9 @@ const installed = buildInstalledTauYaml(
 // (checked in) are the CI contract; these two writes are the live-box sync.
 for (const p of [
   "/home/toxic/.tau/models.yml",
+  // 2026-10-28 single-truth lease: /home/toxic/estate must NEVER exist —
+  // the pens SSOT is the only estate home; writing here silently recreated
+  // the ghost path the lease forbids.
   "/home/toxic/pens/estate/config/tau/models.yml",
 ]) {
   try {
@@ -147,13 +261,14 @@ const kappaInstalled = buildInstalledKappaJson(
     defs: PROVIDER_DEFS,
     aliases: MODEL_ALIASES,
     deadIds: DEAD_MODEL_IDS,
-    provenance: "@toxicwind/pinax src/data.ts",
+    provenance: "@toxicwind/mimetite src/data.ts",
   },
   installedEnv,
 );
 for (const p of [
   "/home/toxic/.config/kappa/kappa-models.json",
-  "/home/toxic/pens/olympus/ssot/kappa/kappa-models.json",
+  // 2026-10-28 single-truth lease: pens SSOT, never /home/toxic/estate.
+  "/home/toxic/pens/estate/config/kappa/kappa-models.json",
 ]) {
   try {
     await Bun.write(p, kappaInstalled);
@@ -162,5 +277,5 @@ for (const p of [
   }
 }
 console.log(
-  "synced installed slice to ~/.config/kappa/kappa-models.json and olympus/ssot/kappa/kappa-models.json",
+  "synced installed slice to ~/.config/kappa/kappa-models.json and estate/config/kappa/kappa-models.json",
 );

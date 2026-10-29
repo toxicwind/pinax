@@ -1,0 +1,1349 @@
+{
+  "schema": "routes-contract/1",
+  "generatedAt": "2026-10-29T00:42:26.919Z",
+  "provenance": "@toxicwind/mimetite src/data.ts",
+  "directives": {
+    "lanes": [
+      "auto",
+      "code",
+      "free",
+      "reasoning"
+    ],
+    "note": "estate/<lane> ids; live-verified 2026-10-26. estate/fast is NOT implemented upstream and must fail fast client-side."
+  },
+  "routes": [
+    {
+      "provider": "moonshot",
+      "modelProvider": null,
+      "baseUrl": "https://api.moonshot.ai/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "MOONSHOT_API_KEY",
+      "seeds": [
+        "moonshot-v1-8k",
+        "moonshot-v1-32k",
+        "moonshot-v1-128k",
+        "kimi-k2-instruct"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "bornite",
+      "modelProvider": null,
+      "baseUrl": "http://127.0.0.1:25100/v1",
+      "api": "openai-completions",
+      "auth": "none",
+      "keyEnv": "",
+      "seeds": [],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "rhodochrosite",
+      "modelProvider": "chalcopyrite",
+      "baseUrl": "http://127.0.0.1:25200/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "CHALCOPYRITE_CLIENT_KEY",
+      "seeds": [
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "openai/gpt-oss-20b"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "rhodochrosite",
+      "modelProvider": "secure-nim",
+      "baseUrl": "https://integrate.api.nvidia.com/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "NVIDIA_API_KEY",
+      "seeds": [
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-3.5-lightning-30b-a3b"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "rhodochrosite",
+      "modelProvider": "azurite",
+      "baseUrl": "http://127.0.0.1:25109/gemini-eap-interactions",
+      "api": "openai-completions",
+      "auth": "none",
+      "keyEnv": "",
+      "seeds": [
+        "models/gemini-flash-tool-retrieval"
+      ],
+      "healthPath": "/v1/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "nvidia",
+      "modelProvider": null,
+      "baseUrl": "https://integrate.api.nvidia.com/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "NVIDIA_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "groq",
+      "modelProvider": null,
+      "baseUrl": "https://api.groq.com/openai/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "GROQ_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "bitdeer",
+      "modelProvider": null,
+      "baseUrl": "https://api-inference.bitdeer.ai/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "BITDEER_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "cerebras",
+      "modelProvider": null,
+      "baseUrl": "https://api.cerebras.ai/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "CEREBRAS_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "openai",
+      "modelProvider": null,
+      "baseUrl": "https://api.openai.com/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "OPENAI_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "deepseek",
+      "modelProvider": null,
+      "baseUrl": "https://api.deepseek.com",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "DEEPSEEK_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/v1/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/v1/chat/completions"
+    },
+    {
+      "provider": "freeinference",
+      "modelProvider": null,
+      "baseUrl": "https://freeinference.org/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "FREEINFERENCE_API_KEY",
+      "seeds": [
+        "glm-5.3-flash",
+        "qwen3.6-35b",
+        "deepseek-v4-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "wandb",
+      "modelProvider": null,
+      "baseUrl": "https://api.inference.wandb.ai/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "WANDB_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "openrouter",
+      "modelProvider": null,
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "OPENROUTER_API_KEY",
+      "seeds": [
+        "qwen/qwen3.8-27b:free",
+        "poolside/laguna-xs-2.1:free",
+        "google/gemma-4-31b-it:free",
+        "nvidia/nemotron-3-super-120b-a12b:free",
+        "inclusionai/ling-3.0-flash-fin:free",
+        "google/gemma-4-26b-a4b-it:free",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+        "nvidia/nemotron-nano-12b-v2-vl:free",
+        "nvidia/nemotron-nano-9b-v2:free",
+        "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "poolside/laguna-s-2.1:free",
+        "cohere/north-mini-code:free",
+        "inclusionai/ling-3.0-flash:free",
+        "x-ai/grok-4.5",
+        "x-ai/grok-4.6"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "together",
+      "modelProvider": null,
+      "baseUrl": "https://api.together.xyz/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "TOGETHER_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "deepinfra",
+      "modelProvider": null,
+      "baseUrl": "https://api.deepinfra.com/v1/openai",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "DEEPINFRA_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/v1/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/v1/chat/completions"
+    },
+    {
+      "provider": "sambanova",
+      "modelProvider": null,
+      "baseUrl": "https://api.sambanova.ai/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "SAMBANOVA_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "siliconflow",
+      "modelProvider": null,
+      "baseUrl": "https://api.siliconflow.com/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "SILICONFLOW_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "novita",
+      "modelProvider": null,
+      "baseUrl": "https://api.novita.ai/openai/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "NOVITA_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "venice",
+      "modelProvider": null,
+      "baseUrl": "https://api.venice.ai/api/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "VENICE_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "aimlapi",
+      "modelProvider": null,
+      "baseUrl": "https://api.aimlapi.com/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "AIMLAPI_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "baseten",
+      "modelProvider": null,
+      "baseUrl": "https://inference.baseten.co/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "BASETEN_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "zai",
+      "modelProvider": null,
+      "baseUrl": "https://api.z.ai/api/coding/paas/v4",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "ZAI_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "zen",
+      "modelProvider": null,
+      "baseUrl": "https://opencode.ai/zen/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "OPENCODE_API_KEY",
+      "seeds": [
+        "mimo-v2.5-free",
+        "mimo-v2.6-flash-free",
+        "ling-3.1-flash-free"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "synthetic",
+      "modelProvider": null,
+      "baseUrl": "https://api.synthetic.new/openai/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "SYNTHETIC_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "wafer-serverless",
+      "modelProvider": null,
+      "baseUrl": "https://pass.wafer.ai/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "WAFER_SERVERLESS_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "qianfan",
+      "modelProvider": null,
+      "baseUrl": "https://qianfan.baidubce.com/v2",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "QIANFAN_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "gmi-cloud",
+      "modelProvider": null,
+      "baseUrl": "https://api.gmi-serving.com/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "GMI_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "sakana",
+      "modelProvider": null,
+      "baseUrl": "https://api.sakana.ai/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "SAKANA_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "abliteration",
+      "modelProvider": null,
+      "baseUrl": "https://api.abliteration.ai/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "ABLITERATION_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "chutes",
+      "modelProvider": null,
+      "baseUrl": "https://llm.chutes.ai/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "CHUTES_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "bedrock-mantle",
+      "modelProvider": null,
+      "baseUrl": "https://bedrock-mantle.{region}.api.aws/openai/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "AWS_BEARER_TOKEN_BEDROCK",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "ollama-cloud",
+      "modelProvider": null,
+      "baseUrl": "https://ollama.com/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "OLLAMA_CLOUD_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "cohere",
+      "modelProvider": null,
+      "baseUrl": "https://api.cohere.com/compatibility/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "COHERE_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "commandcode",
+      "modelProvider": null,
+      "baseUrl": "https://api.commandcode.ai/provider/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "COMMAND_CODE_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "singularityapi-dev",
+      "modelProvider": null,
+      "baseUrl": "https://api.singularityapi.dev/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "SINGULARITYAPI_DEV_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "hetzner",
+      "modelProvider": null,
+      "baseUrl": "https://inference.hetzner.com/api/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "HETZNER_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "google",
+      "modelProvider": null,
+      "baseUrl": "http://127.0.0.1:25109/gemini-eap-interactions",
+      "api": "openai-completions",
+      "auth": "none",
+      "keyEnv": "",
+      "seeds": [],
+      "healthPath": "/v1/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "github",
+      "modelProvider": null,
+      "baseUrl": "https://models.github.ai/inference",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "GITHUB_TOKEN",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/v1/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/v1/chat/completions"
+    },
+    {
+      "provider": "parasail",
+      "modelProvider": null,
+      "baseUrl": "https://api.parasail.io/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "PARASAIL_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "dashscope",
+      "modelProvider": null,
+      "baseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "DASHSCOPE_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "sference",
+      "modelProvider": null,
+      "baseUrl": "https://api.sference.com/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "SFERENCE_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "minara",
+      "modelProvider": null,
+      "baseUrl": "https://api.minara.ai/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "MINARA_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "cometapi",
+      "modelProvider": null,
+      "baseUrl": "https://api.cometapi.com/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "COMETAPI_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "gpuai",
+      "modelProvider": null,
+      "baseUrl": "https://api.gpu.ai/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "GPUAI_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "inferbase",
+      "modelProvider": null,
+      "baseUrl": "https://api.inferbase.ai/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "INFERBASE_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "onde",
+      "modelProvider": null,
+      "baseUrl": "https://cloud.ondeinference.com/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "ONDE_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "inferen",
+      "modelProvider": null,
+      "baseUrl": "https://inferen.dev/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "INFEREN_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    },
+    {
+      "provider": "inception",
+      "modelProvider": null,
+      "baseUrl": "https://api.inceptionlabs.ai/v1",
+      "api": "openai-completions",
+      "auth": "bearer",
+      "keyEnv": "INCEPTION_API_KEY",
+      "seeds": [
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/muse-glimmer-30b",
+        "nvidia/ising-calibration-1.5-31b",
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-ultra-550b-a55b",
+        "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3.5-content-safety",
+        "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0",
+        "openai/gpt-oss-20b",
+        "poolside/laguna-xs-2.1",
+        "z-ai/glm-5.3-flash"
+      ],
+      "healthPath": "/models",
+      "healthOk": [
+        200,
+        401
+      ],
+      "probePath": "/chat/completions"
+    }
+  ]
+}
