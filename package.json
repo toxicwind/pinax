@@ -3,7 +3,8 @@
   "description": "Master provider catalog for the estate estate: provider definitions, live discovery across all /models endpoint shapes, alias map, curated seeds, and auto-quarantine. Single source of truth — TS consumers import it, Go/Python consumers use the generated artifacts.",
   "devDependencies": {
     "@types/bun": "^1.4.4",
-    "bun-types": "^1.4.4",},
+    "bun-types": "^1.4.4"
+  },
   "main": "dist/index.js",
   "name": "@toxicwind/pinax",
   "scripts": {
