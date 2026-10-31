@@ -317,7 +317,7 @@ describe("generated-artifact sync", () => {
     // — never hand-edited. Skips when no bornite checkout is present.
     const candidates = [
       process.env.BORNITE_ASTMATRIX_DIR,
-      "/home/toxic/estate/estate/mesh/router/bornite/internal/astmatrix",
+      "/home/toxic/pens/estate/estate/mesh/router/bornite/internal/astmatrix",
     ].filter((p): p is string => typeof p === "string" && p.length > 0);
     let consumerPath = "";
     let consumer = "";
