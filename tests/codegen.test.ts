@@ -262,8 +262,8 @@ describe("generated-artifact sync", () => {
     // to the canonical generated/providers.go (modulo the Generated-at stamp)
     // — never hand-edited. Skips when no herd checkout is present.
     const candidates = [
-      process.env.HERD_ASTMATRIX_DIR,
-      "/home/toxic/pens/estate/estate/mesh/router/herd/internal/astmatrix",
+      process.env.BORNITE_ASTMATRIX_DIR,
+      "/home/toxic/pens/geode/products/bornite/internal/astmatrix",
     ].filter((p): p is string => typeof p === "string" && p.length > 0);
     let consumerPath = "";
     let consumer = "";

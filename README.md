@@ -20,6 +20,19 @@ estate estate:
 
 ## Why this exists
 
+- **Single source of truth** for provider definitions — base URL, key env var,
+  endpoint-shape adapter, cold-start seeds, context windows, dead ids.
+- **Live discovery** is the source of truth for membership: fetch `/models`
+  across all known endpoint shapes, keep the _last successful_ listing.
+- **Auto-quarantine** removes dead or vanished models automatically — never
+  served, always observable, re-admitted on re-listing.
+- **`provider → modelProvider → model` hierarchy** — one vendor (rhodochrosite) can
+  serve through several distinct backends (rhodochrosite, chalcopyrite, secure-NIM),
+  each with its own URL/key/adapter. Dupes across modelProviders are valid and
+  keyed by path, never deduped.
+- **Generated artifacts** for consumers that can't import TS: `providers.go`,
+  `providers.rs`, `providers.json`, `tau-models.yml`, kappa config.
+
 Every consumer used to hand-maintain its own provider→models list
 (`PROVIDER_MODELS` in the router, hardcoded tables in herd's Go, KDL entries
 in tau, model lists in Python research scripts). Live discovery could only
@@ -57,9 +70,15 @@ src/
   codegen.ts    emits generated/providers.json, providers.go, providers.rs, tau-models.yml, kappa-models.json
 scripts/build.ts  `bun run build` — regenerates generated/ and syncs installed slices to Tau and Kappa
 generated/
+<<<<<<< HEAD
   providers.json       canonical data artifact (Python consumers), $schema estate-pinax/v1
   providers.go         drop-in Go data file for herd (package astmatrix)
   providers.rs         drop-in Rust data module for flock (PINAX_* constants)
+=======
+  providers.json       canonical JSON artifact (Python consumers), $schema estate-mimetite/v1
+  providers.go         drop-in Go data file for bornite (package astmatrix)
+  providers.rs         drop-in Rust data module for rhodochrosite (MIMETITE_* constants)
+>>>>>>> 7906782 (docs+test: rhodochrosite name-drift fix (flock refs); ghost estate path to pens/estate)
   tau-models.yml       canonical YAML model catalog for Tau
   kappa-models.json    canonical JSON provider configuration for Kappa (Profile 1: full)
   providers.kappa.json compatibility JSON artifact for Kappa tooling
