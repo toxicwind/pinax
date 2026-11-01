@@ -1,0 +1,14 @@
+$schema: 'https://moonrepo.dev/schemas/project.json'
+language: 'typescript'
+layer: 'library'
+tasks:
+  build:
+    command: 'bun run build'
+    inputs: ['src/**/*', 'scripts/**/*', 'package.json']
+    outputs: ['dist', 'generated']
+  test:
+    command: 'bun test'
+    inputs: ['src/**/*', 'tests/**/*']
+  typecheck:
+    command: 'bun run typecheck'
+    inputs: ['src/**/*', 'tsconfig.json']

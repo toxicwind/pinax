@@ -1,0 +1,1315 @@
+{
+  "$schema": "estate-pinax/v1",
+  "generatedAt": "2026-10-21T04:47:27.000Z",
+  "generator": "@toxicwind/pinax codegen — DO NOT EDIT BY HAND",
+  "provenance": "@toxicwind/pinax src/data.ts",
+  "adapters": [
+    "openai",
+    "google-v1beta",
+    "mistral",
+    "static",
+    "none"
+  ],
+  "providers": [
+    {
+      "name": "kimi-auto",
+      "displayName": "kimi-auto shim",
+      "baseUrl": "http://127.0.0.1:25153/v1",
+      "keyEnv": "KIMI_AUTO_SHIM_KEY",
+      "keyEnvs": [
+        "KIMI_AUTO_SHIM_KEY"
+      ],
+      "adapter": "static",
+      "auth": "none",
+      "staticModels": [
+        "kimi-auto"
+      ],
+      "routerLocal": true
+    },
+    {
+      "name": "moonshot",
+      "displayName": "Moonshot AI",
+      "baseUrl": "https://api.moonshot.ai/v1",
+      "keyEnv": "MOONSHOT_API_KEY",
+      "keyEnvs": [
+        "MOONSHOT_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "omniroute",
+      "displayName": "OmniRoute (local gateway)",
+      "baseUrl": "http://127.0.0.1:20130/v1",
+      "keyEnv": "OMNIROUTE_GATEWAY_KEY",
+      "keyEnvs": [
+        "OMNIROUTE_GATEWAY_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "nvidia",
+      "baseUrl": "https://integrate.api.nvidia.com/v1",
+      "keyEnv": "NVIDIA_API_KEY",
+      "keyEnvAlt": "NVIDIA_API_KEYS,NIM_PROXY_API_KEY",
+      "keyEnvs": [
+        "NVIDIA_API_KEY",
+        "NVIDIA_API_KEYS",
+        "NIM_PROXY_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "groq",
+      "baseUrl": "https://api.groq.com/openai/v1",
+      "keyEnv": "GROQ_API_KEY",
+      "keyEnvs": [
+        "GROQ_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "bitdeer",
+      "displayName": "Bitdeer AI",
+      "baseUrl": "https://api-inference.bitdeer.ai/v1",
+      "keyEnv": "BITDEER_API_KEY",
+      "keyEnvs": [
+        "BITDEER_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "cerebras",
+      "baseUrl": "https://api.cerebras.ai/v1",
+      "keyEnv": "CEREBRAS_API_KEY",
+      "keyEnvs": [
+        "CEREBRAS_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "openai",
+      "baseUrl": "https://api.openai.com/v1",
+      "keyEnv": "OPENAI_API_KEY",
+      "keyEnvs": [
+        "OPENAI_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "deepseek",
+      "baseUrl": "https://api.deepseek.com",
+      "keyEnv": "DEEPSEEK_API_KEY",
+      "keyEnvs": [
+        "DEEPSEEK_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "freeinference",
+      "displayName": "FreeInference",
+      "baseUrl": "https://freeinference.org/v1",
+      "keyEnv": "FREEINFERENCE_API_KEY",
+      "keyEnvs": [
+        "FREEINFERENCE_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "wandb",
+      "displayName": "W&B Inference",
+      "baseUrl": "https://api.inference.wandb.ai/v1",
+      "keyEnv": "WANDB_API_KEY",
+      "keyEnvs": [
+        "WANDB_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "together",
+      "baseUrl": "https://api.together.xyz/v1",
+      "keyEnv": "TOGETHER_API_KEY",
+      "keyEnvs": [
+        "TOGETHER_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "deepinfra",
+      "baseUrl": "https://api.deepinfra.com/v1/openai",
+      "keyEnv": "DEEPINFRA_API_KEY",
+      "keyEnvs": [
+        "DEEPINFRA_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "sambanova",
+      "displayName": "SambaNova",
+      "baseUrl": "https://api.sambanova.ai/v1",
+      "keyEnv": "SAMBANOVA_API_KEY",
+      "keyEnvs": [
+        "SAMBANOVA_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "siliconflow",
+      "baseUrl": "https://api.siliconflow.com/v1",
+      "keyEnv": "SILICONFLOW_API_KEY",
+      "keyEnvs": [
+        "SILICONFLOW_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "novita",
+      "baseUrl": "https://api.novita.ai/openai/v1",
+      "keyEnv": "NOVITA_API_KEY",
+      "keyEnvs": [
+        "NOVITA_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "venice",
+      "baseUrl": "https://api.venice.ai/api/v1",
+      "keyEnv": "VENICE_API_KEY",
+      "keyEnvs": [
+        "VENICE_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "aimlapi",
+      "baseUrl": "https://api.aimlapi.com/v1",
+      "keyEnv": "AIMLAPI_API_KEY",
+      "keyEnvs": [
+        "AIMLAPI_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "baseten",
+      "baseUrl": "https://inference.baseten.co/v1",
+      "keyEnv": "BASETEN_API_KEY",
+      "keyEnvs": [
+        "BASETEN_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "zai",
+      "baseUrl": "https://api.z.ai/api/coding/paas/v4",
+      "keyEnv": "ZAI_API_KEY",
+      "keyEnvs": [
+        "ZAI_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "zen",
+      "baseUrl": "https://opencode.ai/zen/v1",
+      "keyEnv": "OPENCODE_API_KEY",
+      "keyEnvs": [
+        "OPENCODE_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "synthetic",
+      "baseUrl": "https://api.synthetic.new/openai/v1",
+      "keyEnv": "SYNTHETIC_API_KEY",
+      "keyEnvs": [
+        "SYNTHETIC_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "wafer-serverless",
+      "baseUrl": "https://pass.wafer.ai/v1",
+      "keyEnv": "WAFER_SERVERLESS_API_KEY",
+      "keyEnvs": [
+        "WAFER_SERVERLESS_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "qianfan",
+      "baseUrl": "https://qianfan.baidubce.com/v2",
+      "keyEnv": "QIANFAN_API_KEY",
+      "keyEnvs": [
+        "QIANFAN_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "gmi-cloud",
+      "baseUrl": "https://api.gmi-serving.com/v1",
+      "keyEnv": "GMI_API_KEY",
+      "keyEnvs": [
+        "GMI_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "sakana",
+      "displayName": "Sakana AI",
+      "baseUrl": "https://api.sakana.ai/v1",
+      "keyEnv": "SAKANA_API_KEY",
+      "keyEnvAlt": "FUGU_API_KEY",
+      "keyEnvs": [
+        "SAKANA_API_KEY",
+        "FUGU_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "abliteration",
+      "displayName": "Abliteration",
+      "baseUrl": "https://api.abliteration.ai/v1",
+      "keyEnv": "ABLITERATION_API_KEY",
+      "keyEnvAlt": "ABLIT_KEY",
+      "keyEnvs": [
+        "ABLITERATION_API_KEY",
+        "ABLIT_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "chutes",
+      "displayName": "Chutes",
+      "baseUrl": "https://inference.chutes.ai/v1",
+      "keyEnv": "CHUTES_API_KEY",
+      "keyEnvs": [
+        "CHUTES_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "bedrock-mantle",
+      "displayName": "Bedrock Mantle",
+      "baseUrl": "https://bedrock-mantle.{region}.api.aws/openai/v1",
+      "keyEnv": "AWS_BEARER_TOKEN_BEDROCK",
+      "keyEnvs": [
+        "AWS_BEARER_TOKEN_BEDROCK"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "ollama-cloud",
+      "displayName": "Ollama Cloud",
+      "baseUrl": "https://ollama.com/v1",
+      "keyEnv": "OLLAMA_CLOUD_API_KEY",
+      "keyEnvs": [
+        "OLLAMA_CLOUD_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "cohere",
+      "displayName": "Cohere",
+      "baseUrl": "https://api.cohere.com/compatibility/v1",
+      "keyEnv": "COHERE_API_KEY",
+      "keyEnvs": [
+        "COHERE_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "commandcode",
+      "displayName": "Command Code",
+      "baseUrl": "https://api.commandcode.ai/provider/v1",
+      "keyEnv": "COMMAND_CODE_API_KEY",
+      "keyEnvAlt": "COMMANDCODE_API_KEY",
+      "keyEnvs": [
+        "COMMAND_CODE_API_KEY",
+        "COMMANDCODE_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "singularityapi-dev",
+      "displayName": "SingularityAPI",
+      "baseUrl": "https://api.singularityapi.dev/v1",
+      "keyEnv": "SINGULARITYAPI_DEV_API_KEY",
+      "keyEnvs": [
+        "SINGULARITYAPI_DEV_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "hetzner",
+      "displayName": "Hetzner Inference",
+      "baseUrl": "https://inference.hetzner.com/api/v1",
+      "keyEnv": "HETZNER_API_KEY",
+      "keyEnvs": [
+        "HETZNER_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "google",
+      "displayName": "Google (EAP interactions)",
+      "baseUrl": "http://127.0.0.1:25109/gemini-eap-interactions",
+      "keyEnv": "",
+      "keyEnvs": [],
+      "adapter": "static",
+      "auth": "none",
+      "staticModels": [
+        "models/gemini-flash-tool-retrieval",
+        "models/gemini-3.8-flash",
+        "models/gemini-3.7-flash",
+        "models/gemini-3.6-flash",
+        "models/gemini-3.5-flash",
+        "models/gemini-3.1-pro-preview",
+        "models/gemini-3-flash-preview",
+        "models/gemini-2.5-flash"
+      ]
+    },
+    {
+      "name": "github",
+      "displayName": "GitHub Models",
+      "baseUrl": "https://models.github.ai/inference",
+      "keyEnv": "GITHUB_TOKEN",
+      "keyEnvs": [
+        "GITHUB_TOKEN"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "parasail",
+      "displayName": "Parasail",
+      "baseUrl": "https://api.parasail.io/v1",
+      "keyEnv": "PARASAIL_API_KEY",
+      "keyEnvs": [
+        "PARASAIL_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "dashscope",
+      "displayName": "Alibaba DashScope",
+      "baseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+      "keyEnv": "DASHSCOPE_API_KEY",
+      "keyEnvs": [
+        "DASHSCOPE_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "sference",
+      "displayName": "sference",
+      "baseUrl": "https://api.sference.com/v1",
+      "keyEnv": "SFERENCE_API_KEY",
+      "keyEnvs": [
+        "SFERENCE_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "minara",
+      "displayName": "Minara Cloud",
+      "baseUrl": "https://api.minara.ai/v1",
+      "keyEnv": "MINARA_API_KEY",
+      "keyEnvs": [
+        "MINARA_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "cometapi",
+      "displayName": "CometAPI",
+      "baseUrl": "https://api.cometapi.com/v1",
+      "keyEnv": "COMETAPI_API_KEY",
+      "keyEnvs": [
+        "COMETAPI_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "gpuai",
+      "displayName": "GPU.ai",
+      "baseUrl": "https://api.gpu.ai/v1",
+      "keyEnv": "GPUAI_API_KEY",
+      "keyEnvs": [
+        "GPUAI_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "inferbase",
+      "displayName": "Inferbase",
+      "baseUrl": "https://api.inferbase.ai/v1",
+      "keyEnv": "INFERBASE_API_KEY",
+      "keyEnvs": [
+        "INFERBASE_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "onde",
+      "displayName": "Onde Cloud",
+      "baseUrl": "https://cloud.ondeinference.com/v1",
+      "keyEnv": "ONDE_API_KEY",
+      "keyEnvs": [
+        "ONDE_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "inferen",
+      "displayName": "Inferen",
+      "baseUrl": "https://inferen.dev/v1",
+      "keyEnv": "INFEREN_API_KEY",
+      "keyEnvs": [
+        "INFEREN_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    },
+    {
+      "name": "inception",
+      "displayName": "Inception Labs",
+      "baseUrl": "https://api.inceptionlabs.ai/v1",
+      "keyEnv": "INCEPTION_API_KEY",
+      "keyEnvs": [
+        "INCEPTION_API_KEY"
+      ],
+      "adapter": "openai",
+      "auth": "bearer"
+    }
+  ],
+  "seeds": {
+    "kimi-auto": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "moonshot": [
+      "moonshot-v1-8k",
+      "moonshot-v1-32k",
+      "moonshot-v1-128k",
+      "kimi-k2-instruct"
+    ],
+    "omniroute": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "nvidia": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "groq": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "bitdeer": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "cerebras": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "openai": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "deepseek": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "freeinference": [
+      "glm-5.3-flash",
+      "minimax-m3",
+      "qwen3.6-35b",
+      "diffusiongemma",
+      "deepseek-v4-flash"
+    ],
+    "wandb": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "together": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "deepinfra": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "sambanova": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "siliconflow": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "novita": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "venice": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "aimlapi": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "baseten": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "zai": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "zen": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "synthetic": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "wafer-serverless": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "qianfan": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "gmi-cloud": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "sakana": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "abliteration": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "chutes": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "bedrock-mantle": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "ollama-cloud": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "cohere": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "commandcode": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "singularityapi-dev": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "hetzner": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "google": [],
+    "github": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "parasail": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "dashscope": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "sference": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "minara": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "cometapi": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "gpuai": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "inferbase": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "onde": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "inferen": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "inception": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ]
+  },
+  "seedsContract": "Cold-start only: served while a provider has never had a successful discovery; inert afterwards. Never hand-edit model membership here — discovery owns it.",
+  "aliases": {
+    "nemotron-nano": [
+      "nvidia",
+      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning"
+    ],
+    "nim-nemotron-super": [
+      "nvidia",
+      "nvidia/nemotron-3-super-120b-a12b"
+    ],
+    "nim-nemotron-omni": [
+      "nvidia",
+      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning"
+    ],
+    "nim-nemotron-nano": [
+      "nvidia",
+      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning"
+    ],
+    "nim-llama-3.1-70b": [
+      "nvidia",
+      "meta/llama-3.1-70b-instruct"
+    ],
+    "nim-qwen3.5-397b": [
+      "nvidia",
+      "qwen/qwen3.5-397b-a17b"
+    ],
+    "nim-qwen3.5-122b": [
+      "nvidia",
+      "qwen/qwen3.5-122b-a10b"
+    ],
+    "nim-deepseek-v4-flash": [
+      "nvidia",
+      "deepseek-ai/deepseek-v4-flash"
+    ],
+    "nim-deepseek-v4-pro": [
+      "nvidia",
+      "deepseek-ai/deepseek-v4-pro"
+    ],
+    "nim-mistral-large-3": [
+      "nvidia",
+      "mistralai/mistral-large-3-675b-instruct-2512"
+    ],
+    "nim-gemma4-31b": [
+      "nvidia",
+      "google/gemma-4-31b-it"
+    ],
+    "nim-glm5.2": [
+      "nvidia",
+      "z-ai/glm-5.2"
+    ],
+    "nim-inkling": [
+      "nvidia",
+      "thinkingmachines/inkling"
+    ],
+    "gemini-eap": [
+      "google",
+      "models/gemini-flash-tool-retrieval"
+    ],
+    "gemini-3.8-flash": [
+      "google",
+      "models/gemini-3.8-flash"
+    ],
+    "gemini-3.7-flash": [
+      "google",
+      "models/gemini-3.7-flash"
+    ],
+    "gemini-3.6-flash": [
+      "google",
+      "models/gemini-3.6-flash"
+    ],
+    "gemini-3.5-flash": [
+      "google",
+      "models/gemini-3.5-flash"
+    ],
+    "gemini-3.1-pro": [
+      "google",
+      "models/gemini-3.1-pro-preview"
+    ],
+    "gemini-3-flash": [
+      "google",
+      "models/gemini-3-flash-preview"
+    ],
+    "gemini-2.5-flash": [
+      "google",
+      "models/gemini-2.5-flash"
+    ],
+    "groq-llama-3.3-70b": [
+      "groq",
+      "llama-3.3-70b-versatile"
+    ],
+    "groq-qwen3-32b": [
+      "groq",
+      "qwen/qwen3-32b"
+    ],
+    "groq-qwen3.6-27b": [
+      "groq",
+      "qwen/qwen3.6-27b"
+    ],
+    "groq-gpt-oss-120b": [
+      "groq",
+      "openai/gpt-oss-120b"
+    ],
+    "groq-gpt-oss-20b": [
+      "groq",
+      "openai/gpt-oss-20b"
+    ],
+    "groq-llama-4-scout": [
+      "groq",
+      "meta-llama/llama-4-scout-17b-16e-instruct"
+    ]
+  },
+  "deadIds": [
+    "llama-3.3-70b-versatile",
+    "meta-llama/llama-3.1-8b-instruct",
+    "meta-llama/llama-3.3-70b-instruct",
+    "meta-llama/llama-3.3-70b-instruct:free",
+    "meta-llama/llama-4-scout-17b-16e-instruct",
+    "meta/llama-3.1-8b-instruct",
+    "meta/llama-3.3-70b-instruct",
+    "moonshotai/kimi-k2-instruct",
+    "nousresearch/hermes-3-llama-3.1-405b:free",
+    "nvidia/nemotron-3-nano-30b-a3b:free",
+    "openai/gpt-oss-20b:free",
+    "poolside/laguna-m.1:free",
+    "qwen/qwen3-32b",
+    "qwen/qwen3-coder:free",
+    "qwen/qwen3.6-27b",
+    "tencent/hy3:free"
+  ],
+  "deadIdsContract": "Permanent hand-managed tier (EOL notices). Never served, never re-admitted by discovery."
+}
