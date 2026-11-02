@@ -263,7 +263,7 @@ describe("generated-artifact sync", () => {
     // — never hand-edited. Skips when no herd checkout is present.
     const candidates = [
       process.env.HERD_ASTMATRIX_DIR,
-      "/home/toxic/estate/estate/mesh/router/herd/internal/astmatrix",
+      "/home/toxic/pens/estate/estate/mesh/router/herd/internal/astmatrix",
     ].filter((p): p is string => typeof p === "string" && p.length > 0);
     let consumerPath = "";
     let consumer = "";
