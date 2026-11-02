@@ -1664,6 +1664,48 @@ var PROVIDER_DEFS = [
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ]
+  },
+  {
+    name: "openrouter",
+    displayName: "OpenRouter",
+    baseUrl: "https://openrouter.ai/api/v1",
+    keyEnv: "OPENROUTER_API_KEY",
+    auth: "bearer",
+    adapter: "openai",
+    seeds: [
+      "qwen/qwen3.8-27b:free",
+      "poolside/laguna-xs-2.1:free",
+      "google/gemma-4-31b-it:free",
+      "nvidia/nemotron-3-super-120b-a12b:free",
+      "inclusionai/ling-3.0-flash-fin:free",
+      "google/gemma-4-26b-a4b-it:free",
+      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "nvidia/nemotron-nano-12b-v2-vl:free",
+      "nvidia/nemotron-nano-9b-v2:free",
+      "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "poolside/laguna-s-2.1:free",
+      "cohere/north-mini-code:free",
+      "inclusionai/ling-3.0-flash:free",
+      "x-ai/grok-4.5",
+      "x-ai/grok-4.6"
+    ],
+    contextLengths: {
+      "cohere/north-mini-code:free": 128000,
+      "google/gemma-4-26b-a4b-it:free": 1e6,
+      "google/gemma-4-31b-it:free": 1e6,
+      "inclusionai/ling-3.0-flash-fin:free": 256000,
+      "inclusionai/ling-3.0-flash:free": 256000,
+      "nvidia/nemotron-3-nano-30b-a3b:free": 256000,
+      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free": 256000,
+      "nvidia/nemotron-3-super-120b-a12b:free": 500000,
+      "nvidia/nemotron-3-ultra-550b-a55b:free": 1e6,
+      "nvidia/nemotron-nano-12b-v2-vl:free": 256000,
+      "nvidia/nemotron-nano-9b-v2:free": 256000,
+      "poolside/laguna-s-2.1:free": 256000,
+      "poolside/laguna-xs-2.1:free": 256000,
+      "x-ai/grok-4.5": 2000000,
+      "x-ai/grok-4.6": 2000000
+    }
   }
 ];
 var MODEL_ALIASES = {
