@@ -17,17 +17,10 @@ import {
   MODEL_ALIASES,
   PROVIDER_DEFS,
   resolveContext,
-} from "../src/data.ts";
+} from "../src/index.ts";
 import { ModelCatalog } from "../src/catalog.ts";
 
 const nvidiaDef = PROVIDER_DEFS.find((d) => d.name === "nvidia");
-const rhodochrositeDef = PROVIDER_DEFS.find((d) => d.name === "rhodochrosite");
-const secureNimDef = rhodochrositeDef?.modelProviders?.find(
-  (mp) => mp.name === "secure-nim",
-);
-const chalcopyriteDef = rhodochrositeDef?.modelProviders?.find(
-  (mp) => mp.name === "chalcopyrite",
-);
 
 describe("nvidia provider contract (the NVCF/OpenAI-compat facade)", () => {
   test("nvidia def exists with the Integrate surface + entitled key class", () => {
@@ -38,20 +31,6 @@ describe("nvidia provider contract (the NVCF/OpenAI-compat facade)", () => {
     expect(nvidiaDef!.auth).toBe("bearer");
   });
 
-  test("secure-nim and chalcopyrite backends carry the same nvidia ids", () => {
-    expect(secureNimDef!.seeds).toEqual(
-      expect.arrayContaining([
-        "nvidia/nemotron-3.5-super-vl-120b-a12b",
-        "nvidia/nemotron-3.5-lightning-30b-a3b",
-      ]),
-    );
-    expect(chalcopyriteDef!.seeds).toEqual(
-      expect.arrayContaining([
-        "nvidia/nemotron-3.5-lightning-30b-a3b",
-        "nvidia/nemotron-3-ultra-550b-a55b",
-      ]),
-    );
-  });
 });
 
 describe("all nvidia-family seed ids are catalog-covered", () => {
@@ -74,14 +53,13 @@ describe("all nvidia-family seed ids are catalog-covered", () => {
 
 describe("nvidia context windows (NIM publishes none — pinned statically)", () => {
   test.each([
-    ["nvidia/ising-calibration-1.5-31b", 131072],
     ["nvidia/nemotron-3-nano-omni-30b-a3b-reasoning", 256000],
-    ["nvidia/nemotron-3-ultra-550b-a55b", 1048576],
-    ["nvidia/nemotron-3.5-bolt-e4b", 256000],
-    ["nvidia/nemotron-3.5-content-safety", 131072],
-    ["nvidia/nemotron-3.5-lightning-30b-a3b", 1048576],
-    ["nvidia/nemotron-3.5-super-vl-120b-a12b", 1048576],
-    ["nvidia/nemotron-parse-2.0", 131072],
+    ["nvidia/nemotron-3-super-120b-a12b", 500000],
+    ["nvidia/nemotron-3-ultra-550b-a55b", 1000000],
+    ["openai/gpt-oss-20b", 128000],
+    ["z-ai/glm-5.3", 200000],
+    ["z-ai/glm-5.3-flash", 200000],
+    ["deepseek-ai/deepseek-v4.1-flash", 256000],
   ])("%s resolves to window %i", (id, expected) => {
     const r = resolveContext(id);
     expect(r).toBeDefined();

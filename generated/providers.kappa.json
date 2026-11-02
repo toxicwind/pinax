@@ -1,9 +1,9 @@
 {
   "$schema": "https://app.kappa.ai/config.json",
-  "contract": "estate-mimetite/kappa-catalog/v1",
-  "generator": "@toxicwind/mimetite codegen — kappa target (full profile) — DO NOT EDIT BY HAND",
-  "provenance": "@toxicwind/mimetite src/data.ts",
-  "generatedAt": "2026-10-29T00:30:31.000Z",
+  "contract": "estate-pinax/kappa-catalog/v1",
+  "generator": "@toxicwind/pinax codegen — kappa target (full profile) — DO NOT EDIT BY HAND",
+  "provenance": "@toxicwind/pinax src/data.ts",
+  "generatedAt": "2026-11-01T03:21:09.000Z",
   "deadIds": [
     "llama-3.3-70b-versatile",
     "meta-llama/llama-3.1-8b-instruct",
@@ -29,7 +29,7 @@
     ],
     "nim-nemotron-super": [
       "nvidia",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b"
+      "nvidia/nemotron-3-super-120b-a12b"
     ],
     "nim-nemotron-omni": [
       "nvidia",
@@ -107,6 +107,18 @@
       "google",
       "models/gemini-2.5-flash"
     ],
+    "groq-llama-3.3-70b": [
+      "groq",
+      "llama-3.3-70b-versatile"
+    ],
+    "groq-qwen3-32b": [
+      "groq",
+      "qwen/qwen3-32b"
+    ],
+    "groq-qwen3.6-27b": [
+      "groq",
+      "qwen/qwen3.6-27b"
+    ],
     "groq-gpt-oss-120b": [
       "groq",
       "openai/gpt-oss-120b"
@@ -115,14 +127,26 @@
       "groq",
       "openai/gpt-oss-20b"
     ],
-    "groq-qwen3.8-27b": [
+    "groq-llama-4-scout": [
       "groq",
-      "qwen/qwen3.8-27b"
+      "meta-llama/llama-4-scout-17b-16e-instruct"
     ]
   },
   "seeds": {
     "kimi-auto": [
-      "kimi-auto"
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
     ],
     "moonshot": [
       "moonshot-v1-8k",
@@ -130,632 +154,640 @@
       "moonshot-v1-128k",
       "kimi-k2-instruct"
     ],
-    "bornite": [],
-    "rhodochrosite": [],
-    "nvidia": [
+    "omniroute": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "nvidia": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "groq": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "bitdeer": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "cerebras": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "openai": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "deepseek": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "freeinference": [
       "glm-5.3-flash",
+      "minimax-m3",
       "qwen3.6-35b",
+      "diffusiongemma",
       "deepseek-v4-flash"
     ],
     "wandb": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
-    "openrouter": [
-      "qwen/qwen3.8-27b:free",
-      "poolside/laguna-xs-2.1:free",
-      "google/gemma-4-31b-it:free",
-      "nvidia/nemotron-3-super-120b-a12b:free",
-      "inclusionai/ling-3.0-flash-fin:free",
-      "google/gemma-4-26b-a4b-it:free",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-      "nvidia/nemotron-nano-12b-v2-vl:free",
-      "nvidia/nemotron-nano-9b-v2:free",
-      "nvidia/nemotron-3-ultra-550b-a55b:free",
-      "poolside/laguna-s-2.1:free",
-      "cohere/north-mini-code:free",
-      "inclusionai/ling-3.0-flash:free",
-      "x-ai/grok-4.5",
-      "x-ai/grok-4.6"
-    ],
     "together": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "deepinfra": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "sambanova": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "siliconflow": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "novita": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "venice": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "aimlapi": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "baseten": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "zai": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "zen": [
-      "mimo-v2.5-free",
-      "mimo-v2.6-flash-free",
-      "ling-3.1-flash-free"
-    ],
-    "synthetic": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
+      "openai/gpt-oss-20b",
+      "poolside/laguna-xs-2.1",
+      "z-ai/glm-5.3-flash"
+    ],
+    "synthetic": [
+      "google/diffusiongemma-26b-a4b-it",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/muse-glimmer-30b",
+      "nvidia/ising-calibration-1.5-31b",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/nemotron-3.5-content-safety",
+      "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "wafer-serverless": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "qianfan": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "gmi-cloud": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "sakana": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "abliteration": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "chutes": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "bedrock-mantle": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "ollama-cloud": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "cohere": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "commandcode": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "singularityapi-dev": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "hetzner": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "google": [],
     "github": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "parasail": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "dashscope": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "sference": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "minara": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "cometapi": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "gpuai": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "inferbase": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "onde": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "inferen": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
     ],
     "inception": [
+      "google/diffusiongemma-26b-a4b-it",
       "meta/llama-3.2-11b-vision-instruct",
       "meta/muse-glimmer-30b",
       "nvidia/ising-calibration-1.5-31b",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-      "nvidia/nemotron-3-ultra-550b-a55b",
-      "nvidia/nemotron-3.5-bolt-e4b",
+      "nvidia/nemotron-3-super-120b-a12b",
       "nvidia/nemotron-3.5-content-safety",
       "nvidia/nemotron-3.5-lightning-30b-a3b",
-      "nvidia/nemotron-3.5-super-vl-120b-a12b",
       "nvidia/nemotron-parse-2.0",
+      "nvidia/riva-translate-4b-instruct-v1.1",
+      "nvidia/riva-translate-4b-instruct-v2",
       "openai/gpt-oss-20b",
       "poolside/laguna-xs-2.1",
       "z-ai/glm-5.3-flash"
@@ -800,82 +832,102 @@
         }
       }
     },
-    "rhodochrosite": {
+    "omniroute": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "Rhodochrosite (estate multi-provider gateway)",
+      "name": "OmniRoute (local gateway)",
       "options": {
-        "baseURL": "http://127.0.0.1:25193/v1",
-        "apiKey": "bornite-local"
-      },
-      "models": {}
-    },
-    "rhodochrosite.chalcopyrite": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "Rhodochrosite (estate multi-provider gateway) / Chalcopyrite :25200",
-      "options": {
-        "baseURL": "http://127.0.0.1:25200/v1",
-        "apiKey": "{env:CHALCOPYRITE_CLIENT_KEY}"
+        "baseURL": "http://127.0.0.1:20130/v1",
+        "apiKey": "{env:OMNIROUTE_GATEWAY_KEY}"
       },
       "models": {
-        "nvidia/nemotron-3.5-lightning-30b-a3b": {
-          "name": "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
           "limit": {
-            "context": 1048576,
+            "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
+        "meta/llama-3.2-11b-vision-instruct": {
+          "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
-            "context": 1048576,
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "meta/muse-glimmer-30b": {
+          "name": "meta/muse-glimmer-30b",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/ising-calibration-1.5-31b": {
+          "name": "nvidia/ising-calibration-1.5-31b",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/nemotron-3.5-content-safety": {
+          "name": "nvidia/nemotron-3.5-content-safety",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/nemotron-3.5-lightning-30b-a3b": {
+          "name": "nvidia/nemotron-3.5-lightning-30b-a3b",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
+          "limit": {
+            "context": 128000,
             "output": 8192
           }
         },
         "openai/gpt-oss-20b": {
           "name": "openai/gpt-oss-20b",
           "limit": {
-            "context": 131072,
-            "output": 8192
-          }
-        }
-      }
-    },
-    "rhodochrosite.secure-nim": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "Rhodochrosite (estate multi-provider gateway) / NVIDIA secure-NIM",
-      "options": {
-        "baseURL": "https://integrate.api.nvidia.com/v1",
-        "apiKey": "{env:NVIDIA_API_KEY}"
-      },
-      "models": {
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-          "limit": {
-            "context": 1048576,
+            "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-lightning-30b-a3b": {
-          "name": "nvidia/nemotron-3.5-lightning-30b-a3b",
+        "poolside/laguna-xs-2.1": {
+          "name": "poolside/laguna-xs-2.1",
           "limit": {
-            "context": 1048576,
+            "context": 128000,
             "output": 8192
           }
-        }
-      }
-    },
-    "rhodochrosite.azurite": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "Rhodochrosite (estate multi-provider gateway) / Azurite (gemini-flash-tool-retrieval only)",
-      "options": {
-        "baseURL": "http://127.0.0.1:25109/gemini-eap-interactions",
-        "apiKey": "none"
-      },
-      "models": {
-        "models/gemini-flash-tool-retrieval": {
-          "name": "models/gemini-flash-tool-retrieval",
+        },
+        "z-ai/glm-5.3-flash": {
+          "name": "z-ai/glm-5.3-flash",
           "limit": {
-            "context": 1000000,
+            "context": 128000,
             "output": 8192
           }
         }
@@ -889,87 +941,87 @@
         "apiKey": "{env:NVIDIA_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
-            "context": 131072,
+            "context": 128000,
             "output": 8192
           }
         },
         "meta/muse-glimmer-30b": {
           "name": "meta/muse-glimmer-30b",
           "limit": {
-            "context": 131072,
+            "context": 128000,
             "output": 8192
           }
         },
         "nvidia/ising-calibration-1.5-31b": {
           "name": "nvidia/ising-calibration-1.5-31b",
           "limit": {
-            "context": 131072,
+            "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
-            "context": 256000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 1048576,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
-          "limit": {
-            "context": 256000,
+            "context": 500000,
             "output": 8192
           }
         },
         "nvidia/nemotron-3.5-content-safety": {
           "name": "nvidia/nemotron-3.5-content-safety",
           "limit": {
-            "context": 131072,
+            "context": 128000,
             "output": 8192
           }
         },
         "nvidia/nemotron-3.5-lightning-30b-a3b": {
           "name": "nvidia/nemotron-3.5-lightning-30b-a3b",
           "limit": {
-            "context": 1048576,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
-          "limit": {
-            "context": 1048576,
+            "context": 128000,
             "output": 8192
           }
         },
         "nvidia/nemotron-parse-2.0": {
           "name": "nvidia/nemotron-parse-2.0",
           "limit": {
-            "context": 131072,
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
+          "limit": {
+            "context": 128000,
             "output": 8192
           }
         },
         "openai/gpt-oss-20b": {
           "name": "openai/gpt-oss-20b",
           "limit": {
-            "context": 131072,
+            "context": 128000,
             "output": 8192
           }
         },
         "poolside/laguna-xs-2.1": {
           "name": "poolside/laguna-xs-2.1",
           "limit": {
-            "context": 131072,
+            "context": 128000,
             "output": 8192
           }
         },
@@ -990,6 +1042,13 @@
         "apiKey": "{env:GROQ_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -1011,22 +1070,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -1046,15 +1091,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -1063,7 +1115,7 @@
         "openai/gpt-oss-20b": {
           "name": "openai/gpt-oss-20b",
           "limit": {
-            "context": 131072,
+            "context": 128000,
             "output": 8192
           }
         },
@@ -1091,6 +1143,13 @@
         "apiKey": "{env:BITDEER_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -1112,22 +1171,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -1147,15 +1192,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -1192,6 +1244,13 @@
         "apiKey": "{env:CEREBRAS_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -1213,22 +1272,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -1248,15 +1293,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -1293,6 +1345,13 @@
         "apiKey": "{env:OPENAI_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -1314,22 +1373,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -1349,15 +1394,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -1394,6 +1446,13 @@
         "apiKey": "{env:DEEPSEEK_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -1415,22 +1474,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -1450,15 +1495,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -1502,8 +1554,22 @@
             "output": 8192
           }
         },
+        "minimax-m3": {
+          "name": "minimax-m3",
+          "limit": {
+            "context": 1000000,
+            "output": 8192
+          }
+        },
         "qwen3.6-35b": {
           "name": "qwen3.6-35b",
+          "limit": {
+            "context": 262000,
+            "output": 8192
+          }
+        },
+        "diffusiongemma": {
+          "name": "diffusiongemma",
           "limit": {
             "context": 262000,
             "output": 8192
@@ -1520,12 +1586,19 @@
     },
     "wandb": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "wandb",
+      "name": "W&B Inference",
       "options": {
         "baseURL": "https://api.inference.wandb.ai/v1",
         "apiKey": "{env:WANDB_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -1547,22 +1620,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -1582,15 +1641,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -1619,121 +1685,6 @@
         }
       }
     },
-    "openrouter": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "OpenRouter",
-      "options": {
-        "baseURL": "https://openrouter.ai/api/v1",
-        "apiKey": "{env:OPENROUTER_API_KEY}"
-      },
-      "models": {
-        "qwen/qwen3.8-27b:free": {
-          "name": "qwen/qwen3.8-27b:free",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "poolside/laguna-xs-2.1:free": {
-          "name": "poolside/laguna-xs-2.1:free",
-          "limit": {
-            "context": 256000,
-            "output": 8192
-          }
-        },
-        "google/gemma-4-31b-it:free": {
-          "name": "google/gemma-4-31b-it:free",
-          "limit": {
-            "context": 1000000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-super-120b-a12b:free": {
-          "name": "nvidia/nemotron-3-super-120b-a12b:free",
-          "limit": {
-            "context": 500000,
-            "output": 8192
-          }
-        },
-        "inclusionai/ling-3.0-flash-fin:free": {
-          "name": "inclusionai/ling-3.0-flash-fin:free",
-          "limit": {
-            "context": 256000,
-            "output": 8192
-          }
-        },
-        "google/gemma-4-26b-a4b-it:free": {
-          "name": "google/gemma-4-26b-a4b-it:free",
-          "limit": {
-            "context": 1000000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-          "limit": {
-            "context": 256000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-nano-12b-v2-vl:free": {
-          "name": "nvidia/nemotron-nano-12b-v2-vl:free",
-          "limit": {
-            "context": 256000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-nano-9b-v2:free": {
-          "name": "nvidia/nemotron-nano-9b-v2:free",
-          "limit": {
-            "context": 256000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b:free": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b:free",
-          "limit": {
-            "context": 1000000,
-            "output": 8192
-          }
-        },
-        "poolside/laguna-s-2.1:free": {
-          "name": "poolside/laguna-s-2.1:free",
-          "limit": {
-            "context": 256000,
-            "output": 8192
-          }
-        },
-        "cohere/north-mini-code:free": {
-          "name": "cohere/north-mini-code:free",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "inclusionai/ling-3.0-flash:free": {
-          "name": "inclusionai/ling-3.0-flash:free",
-          "limit": {
-            "context": 256000,
-            "output": 8192
-          }
-        },
-        "x-ai/grok-4.5": {
-          "name": "x-ai/grok-4.5",
-          "limit": {
-            "context": 2000000,
-            "output": 8192
-          }
-        },
-        "x-ai/grok-4.6": {
-          "name": "x-ai/grok-4.6",
-          "limit": {
-            "context": 2000000,
-            "output": 8192
-          }
-        }
-      }
-    },
     "together": {
       "npm": "@ai-sdk/openai-compatible",
       "name": "together",
@@ -1742,6 +1693,13 @@
         "apiKey": "{env:TOGETHER_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -1763,22 +1721,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -1798,15 +1742,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -1843,6 +1794,13 @@
         "apiKey": "{env:DEEPINFRA_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -1864,22 +1822,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -1899,15 +1843,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -1944,6 +1895,13 @@
         "apiKey": "{env:SAMBANOVA_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -1965,22 +1923,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -2000,15 +1944,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -2045,6 +1996,13 @@
         "apiKey": "{env:SILICONFLOW_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -2066,22 +2024,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -2101,15 +2045,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -2146,6 +2097,13 @@
         "apiKey": "{env:NOVITA_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -2167,22 +2125,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -2202,15 +2146,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -2247,6 +2198,13 @@
         "apiKey": "{env:VENICE_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -2268,22 +2226,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -2303,15 +2247,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -2348,6 +2299,13 @@
         "apiKey": "{env:AIMLAPI_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -2369,22 +2327,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -2404,15 +2348,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -2449,6 +2400,13 @@
         "apiKey": "{env:BASETEN_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -2470,22 +2428,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -2505,15 +2449,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -2550,6 +2501,13 @@
         "apiKey": "{env:ZAI_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -2571,22 +2529,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -2606,15 +2550,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -2645,99 +2596,19 @@
     },
     "zen": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "opencode zen (free tier)",
+      "name": "zen",
       "options": {
         "baseURL": "https://opencode.ai/zen/v1",
         "apiKey": "{env:OPENCODE_API_KEY}"
       },
       "models": {
-        "big-pickle": {
-          "name": "big-pickle",
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "fledge-alpha-free": {
-          "name": "fledge-alpha-free",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "jev-1.13-free": {
-          "name": "jev-1.13-free",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "ling-3.1-flash-free": {
-          "name": "ling-3.1-flash-free",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "longcat-2.5-preview-free": {
-          "name": "longcat-2.5-preview-free",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "mimo-v2.5-free": {
-          "name": "mimo-v2.5-free",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "mimo-v2.6-flash-free": {
-          "name": "mimo-v2.6-flash-free",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "muse-spark-1.2-contributor-free": {
-          "name": "muse-spark-1.2-contributor-free",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "muse-spark-1.3-contributor-free": {
-          "name": "muse-spark-1.3-contributor-free",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nemotron-3.5-lightning-free": {
-          "name": "nemotron-3.5-lightning-free",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "space-bunny-free": {
-          "name": "space-bunny-free",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        }
-      }
-    },
-    "synthetic": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "synthetic",
-      "options": {
-        "baseURL": "https://api.synthetic.new/openai/v1",
-        "apiKey": "{env:SYNTHETIC_API_KEY}"
-      },
-      "models": {
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -2759,22 +2630,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -2794,8 +2651,102 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "openai/gpt-oss-20b": {
+          "name": "openai/gpt-oss-20b",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "poolside/laguna-xs-2.1": {
+          "name": "poolside/laguna-xs-2.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "z-ai/glm-5.3-flash": {
+          "name": "z-ai/glm-5.3-flash",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        }
+      }
+    },
+    "synthetic": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "synthetic",
+      "options": {
+        "baseURL": "https://api.synthetic.new/openai/v1",
+        "apiKey": "{env:SYNTHETIC_API_KEY}"
+      },
+      "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "meta/llama-3.2-11b-vision-instruct": {
+          "name": "meta/llama-3.2-11b-vision-instruct",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "meta/muse-glimmer-30b": {
+          "name": "meta/muse-glimmer-30b",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/ising-calibration-1.5-31b": {
+          "name": "nvidia/ising-calibration-1.5-31b",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/nemotron-3.5-content-safety": {
+          "name": "nvidia/nemotron-3.5-content-safety",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/nemotron-3.5-lightning-30b-a3b": {
+          "name": "nvidia/nemotron-3.5-lightning-30b-a3b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -2803,6 +2754,20 @@
         },
         "nvidia/nemotron-parse-2.0": {
           "name": "nvidia/nemotron-parse-2.0",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -2839,6 +2804,13 @@
         "apiKey": "{env:WAFER_SERVERLESS_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -2860,22 +2832,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -2895,15 +2853,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -2940,6 +2905,13 @@
         "apiKey": "{env:QIANFAN_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -2961,22 +2933,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -2996,15 +2954,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -3041,6 +3006,13 @@
         "apiKey": "{env:GMI_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -3062,22 +3034,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -3097,15 +3055,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -3142,6 +3107,13 @@
         "apiKey": "{env:SAKANA_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -3163,22 +3135,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -3198,15 +3156,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -3243,6 +3208,13 @@
         "apiKey": "{env:ABLITERATION_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -3264,22 +3236,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -3299,15 +3257,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -3340,10 +3305,17 @@
       "npm": "@ai-sdk/openai-compatible",
       "name": "Chutes",
       "options": {
-        "baseURL": "https://llm.chutes.ai/v1",
+        "baseURL": "https://inference.chutes.ai/v1",
         "apiKey": "{env:CHUTES_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -3365,22 +3337,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -3400,15 +3358,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -3445,6 +3410,13 @@
         "apiKey": "{env:AWS_BEARER_TOKEN_BEDROCK}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -3466,22 +3438,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -3501,15 +3459,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -3546,6 +3511,13 @@
         "apiKey": "{env:OLLAMA_CLOUD_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -3567,22 +3539,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -3602,15 +3560,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -3647,6 +3612,13 @@
         "apiKey": "{env:COHERE_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -3668,22 +3640,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -3703,15 +3661,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -3748,6 +3713,13 @@
         "apiKey": "{env:COMMAND_CODE_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -3769,22 +3741,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -3804,15 +3762,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -3849,6 +3814,13 @@
         "apiKey": "{env:SINGULARITYAPI_DEV_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -3870,22 +3842,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -3905,15 +3863,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -3950,6 +3915,13 @@
         "apiKey": "{env:HETZNER_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -3971,22 +3943,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -4006,15 +3964,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -4117,6 +4082,13 @@
         "apiKey": "{env:GITHUB_TOKEN}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -4138,22 +4110,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -4173,15 +4131,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -4218,6 +4183,13 @@
         "apiKey": "{env:PARASAIL_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -4239,22 +4211,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -4274,15 +4232,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -4319,6 +4284,13 @@
         "apiKey": "{env:DASHSCOPE_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -4340,22 +4312,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -4375,15 +4333,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -4420,6 +4385,13 @@
         "apiKey": "{env:SFERENCE_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -4441,22 +4413,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -4476,15 +4434,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -4521,6 +4486,13 @@
         "apiKey": "{env:MINARA_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -4542,22 +4514,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -4577,15 +4535,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -4622,6 +4587,13 @@
         "apiKey": "{env:COMETAPI_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -4643,22 +4615,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -4678,15 +4636,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -4723,6 +4688,13 @@
         "apiKey": "{env:GPUAI_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -4744,22 +4716,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -4779,15 +4737,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -4824,6 +4789,13 @@
         "apiKey": "{env:INFERBASE_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -4845,22 +4817,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -4880,15 +4838,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -4925,6 +4890,13 @@
         "apiKey": "{env:ONDE_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -4946,22 +4918,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -4981,15 +4939,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -5026,6 +4991,13 @@
         "apiKey": "{env:INFEREN_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -5047,22 +5019,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -5082,15 +5040,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -5127,6 +5092,13 @@
         "apiKey": "{env:INCEPTION_API_KEY}"
       },
       "models": {
+        "google/diffusiongemma-26b-a4b-it": {
+          "name": "google/diffusiongemma-26b-a4b-it",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
         "meta/llama-3.2-11b-vision-instruct": {
           "name": "meta/llama-3.2-11b-vision-instruct",
           "limit": {
@@ -5148,22 +5120,8 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning": {
-          "name": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3-ultra-550b-a55b": {
-          "name": "nvidia/nemotron-3-ultra-550b-a55b",
-          "limit": {
-            "context": 128000,
-            "output": 8192
-          }
-        },
-        "nvidia/nemotron-3.5-bolt-e4b": {
-          "name": "nvidia/nemotron-3.5-bolt-e4b",
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "nvidia/nemotron-3-super-120b-a12b",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -5183,15 +5141,22 @@
             "output": 8192
           }
         },
-        "nvidia/nemotron-3.5-super-vl-120b-a12b": {
-          "name": "nvidia/nemotron-3.5-super-vl-120b-a12b",
+        "nvidia/nemotron-parse-2.0": {
+          "name": "nvidia/nemotron-parse-2.0",
           "limit": {
             "context": 128000,
             "output": 8192
           }
         },
-        "nvidia/nemotron-parse-2.0": {
-          "name": "nvidia/nemotron-parse-2.0",
+        "nvidia/riva-translate-4b-instruct-v1.1": {
+          "name": "nvidia/riva-translate-4b-instruct-v1.1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          }
+        },
+        "nvidia/riva-translate-4b-instruct-v2": {
+          "name": "nvidia/riva-translate-4b-instruct-v2",
           "limit": {
             "context": 128000,
             "output": 8192
@@ -5249,77 +5214,25 @@
       "auth": "bearer"
     },
     {
-      "name": "bornite",
-      "displayName": "Bornite (local VRAM engine)",
-      "baseUrl": "http://127.0.0.1:25100/v1",
-      "keyEnv": "",
-      "keyEnvs": [],
-      "adapter": "openai",
-      "auth": "none"
-    },
-    {
-      "name": "rhodochrosite",
-      "displayName": "Rhodochrosite (estate multi-provider gateway)",
-      "baseUrl": "http://127.0.0.1:25193/v1",
-      "keyEnv": "FLOCK_API_KEY",
+      "name": "omniroute",
+      "displayName": "OmniRoute (local gateway)",
+      "baseUrl": "http://127.0.0.1:20130/v1",
+      "keyEnv": "OMNIROUTE_GATEWAY_KEY",
       "keyEnvs": [
-        "FLOCK_API_KEY"
+        "OMNIROUTE_GATEWAY_KEY"
       ],
-      "adapter": "none",
-      "auth": "bearer",
-      "modelProviders": [
-        {
-          "name": "chalcopyrite",
-          "baseUrl": "http://127.0.0.1:25200/v1",
-          "keyEnv": "CHALCOPYRITE_CLIENT_KEY",
-          "adapter": "static",
-          "auth": "bearer",
-          "seeds": [
-            "nvidia/nemotron-3.5-lightning-30b-a3b",
-            "nvidia/nemotron-3-ultra-550b-a55b",
-            "openai/gpt-oss-20b"
-          ],
-          "contextLengths": {
-            "nvidia/nemotron-3.5-lightning-30b-a3b": 1048576,
-            "nvidia/nemotron-3-ultra-550b-a55b": 1048576,
-            "openai/gpt-oss-20b": 131072
-          }
-        },
-        {
-          "name": "secure-nim",
-          "baseUrl": "https://integrate.api.nvidia.com/v1",
-          "keyEnv": "NVIDIA_API_KEY",
-          "adapter": "static",
-          "auth": "bearer",
-          "seeds": [
-            "nvidia/nemotron-3.5-super-vl-120b-a12b",
-            "nvidia/nemotron-3.5-lightning-30b-a3b"
-          ],
-          "contextLengths": {
-            "nvidia/nemotron-3.5-super-vl-120b-a12b": 1048576,
-            "nvidia/nemotron-3.5-lightning-30b-a3b": 1048576
-          }
-        },
-        {
-          "name": "azurite",
-          "baseUrl": "http://127.0.0.1:25109/gemini-eap-interactions",
-          "adapter": "static",
-          "auth": "none",
-          "seeds": [
-            "models/gemini-flash-tool-retrieval"
-          ],
-          "contextLengths": {
-            "models/gemini-flash-tool-retrieval": 1000000
-          }
-        }
-      ]
+      "adapter": "openai",
+      "auth": "bearer"
     },
     {
       "name": "nvidia",
       "baseUrl": "https://integrate.api.nvidia.com/v1",
       "keyEnv": "NVIDIA_API_KEY",
+      "keyEnvAlt": "NVIDIA_API_KEYS,NIM_PROXY_API_KEY",
       "keyEnvs": [
-        "NVIDIA_API_KEY"
+        "NVIDIA_API_KEY",
+        "NVIDIA_API_KEYS",
+        "NIM_PROXY_API_KEY"
       ],
       "adapter": "openai",
       "auth": "bearer"
@@ -5383,34 +5296,16 @@
       "keyEnvs": [
         "FREEINFERENCE_API_KEY"
       ],
-      "adapter": "static",
-      "auth": "bearer",
-      "extraHeaders": {
-        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
-      },
-      "staticModels": [
-        "glm-5.3-flash",
-        "qwen3.6-35b",
-        "deepseek-v4-flash"
-      ]
-    },
-    {
-      "name": "wandb",
-      "baseUrl": "https://api.inference.wandb.ai/v1",
-      "keyEnv": "WANDB_API_KEY",
-      "keyEnvs": [
-        "WANDB_API_KEY"
-      ],
       "adapter": "openai",
       "auth": "bearer"
     },
     {
-      "name": "openrouter",
-      "displayName": "OpenRouter",
-      "baseUrl": "https://openrouter.ai/api/v1",
-      "keyEnv": "OPENROUTER_API_KEY",
+      "name": "wandb",
+      "displayName": "W&B Inference",
+      "baseUrl": "https://api.inference.wandb.ai/v1",
+      "keyEnv": "WANDB_API_KEY",
       "keyEnvs": [
-        "OPENROUTER_API_KEY"
+        "WANDB_API_KEY"
       ],
       "adapter": "openai",
       "auth": "bearer"
@@ -5508,27 +5403,13 @@
     },
     {
       "name": "zen",
-      "displayName": "opencode zen (free tier)",
       "baseUrl": "https://opencode.ai/zen/v1",
       "keyEnv": "OPENCODE_API_KEY",
       "keyEnvs": [
         "OPENCODE_API_KEY"
       ],
       "adapter": "openai",
-      "auth": "bearer",
-      "staticModels": [
-        "big-pickle",
-        "fledge-alpha-free",
-        "jev-1.13-free",
-        "ling-3.1-flash-free",
-        "longcat-2.5-preview-free",
-        "mimo-v2.5-free",
-        "mimo-v2.6-flash-free",
-        "muse-spark-1.2-contributor-free",
-        "muse-spark-1.3-contributor-free",
-        "nemotron-3.5-lightning-free",
-        "space-bunny-free"
-      ]
+      "auth": "bearer"
     },
     {
       "name": "synthetic",
@@ -5599,7 +5480,7 @@
     {
       "name": "chutes",
       "displayName": "Chutes",
-      "baseUrl": "https://llm.chutes.ai/v1",
+      "baseUrl": "https://inference.chutes.ai/v1",
       "keyEnv": "CHUTES_API_KEY",
       "keyEnvs": [
         "CHUTES_API_KEY"

@@ -30,6 +30,7 @@ export type { DiscoverOptions, DiscoveryResult } from "./discovery.ts";
 export { ModelCatalog, PRUNE_AFTER_MISSES } from "./catalog.ts";
 
 export { DEAD_MODEL_IDS, MODEL_ALIASES, PROVIDER_DEFS } from "./data.ts";
+export { resolveContext, type ResolveContextResult } from "./data.ts";
 
 export {
   displayNameFor,
